@@ -44,7 +44,7 @@ function render(){if(section==='admin'){$('#main').innerHTML=editor?placeForm():
  if($('#orderForm'))$('#orderForm').onsubmit=e=>{e.preventDefault();readEditor();guarded('save_order',{workplace,number:editor.number,expected:editor.expected,data:editor.data})};
  if($('#saveAssessment'))$('#saveAssessment').onclick=()=>guarded('assess',{workplace,view:card.view,colour,note:$('#assessmentNote').value});
  if($('#auditLoad'))$('#auditLoad').onclick=()=>guarded('audit');
- if($('#historyLoad'))$('#historyLoad').onclick=()=>guarded('history',{workplace,order:card.id});
+ if($('#historyLoad'))$('#historyLoad').onclick=()=>guarded('history',{section,workplace,order:card.id});
  if($('#importFile'))$('#importFile').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;if(file.size>4_000_000)throw Error('Пакет слишком большой: раздели его');importBatch=JSON.parse(await file.text());if(!Array.isArray(importBatch.orders))throw Error('Не найден список нарядов');preview=null;render()}catch(e){notice(e.message,true)}};
  if($('#previewImport'))$('#previewImport').onclick=()=>guarded('preview_import',{workplace,batch:importBatch});
  if(demo&&$('#confirmImport')){$('#confirmImport').disabled=true;$('#confirmImport').textContent='Импорт — в общей базе'}
