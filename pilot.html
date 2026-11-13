@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#000000"><title>КИСТ · Термист UI042</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#000000"><title>КИСТ · Термист UI044</title>
 <style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#161618;background:#f2f2f7;color-scheme:light;--blue:#007aff;--line:#dedee3}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer;border:0;background:none;color:var(--blue);min-height:48px;padding:10px 14px;font-size:17px}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible{outline:3px solid #007aff;outline-offset:2px}header,main,.bottom{max-width:760px;margin:auto}header{padding:calc(18px + env(safe-area-inset-top)) 20px 8px}.eyebrow{display:flex;gap:10px;align-items:center;color:#6c6c70;font-size:12px;font-weight:600;letter-spacing:.04em}.logo{font-size:12px;background:#172b41;color:white;border-radius:7px;padding:7px;letter-spacing:.06em}.topline{display:flex;align-items:center;justify-content:space-between;margin-top:13px}h1{font-size:34px;line-height:1.1;letter-spacing:-1px;margin:8px 0}h2{font-size:26px;margin:10px 0 20px}.who{color:#6c6c70;font-size:15px;margin-top:6px}.plus{font-size:38px;font-weight:300;padding:0;width:52px;height:52px}.connection{font-size:12px;color:#68686e;margin:16px 0 10px;min-height:18px}.connection.bad{color:#a32c23}main{padding:0 16px 100px}.sectionlabel{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#74747b;margin:23px 16px 9px}.tablehead,.row{display:grid;grid-template-columns:minmax(70px,.9fr) minmax(0,1.7fr) minmax(88px,1fr);gap:12px;align-items:center}.tablehead{font-size:12px;color:#77777e;padding:10px 16px}.group{background:white;border-radius:18px;overflow:hidden}.row{width:100%;color:inherit;text-align:left;padding:20px 16px;min-height:78px;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.order{font-size:16px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.name{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.state{overflow:hidden;text-overflow:ellipsis;text-align:right;font-size:14px;font-weight:600;white-space:nowrap}.waiting{color:#8e8e93}.working{color:#a65a00}.done{color:#16834b}.reviewmark{display:block;font-size:10px;font-weight:400;margin-top:5px;color:#6c6c70}.empty{padding:40px 22px;color:#787880;text-align:center;line-height:1.6}.segment{display:flex;background:#e4e4e9;border-radius:10px;padding:3px;margin:18px 0}.segment button{flex:1;color:#505057;min-height:38px;font-size:14px;padding:6px}.segment button.active{background:white;color:#18181a;border-radius:8px;box-shadow:0 2px 6px #0001}.card{background:white;border-radius:16px;padding:0 16px;margin:12px 0}.field{display:flex;align-items:center;gap:12px;min-height:62px;border-bottom:1px solid var(--line);padding:9px 0}.field:last-child{border-bottom:0}.field label{flex:0 0 38%;font-size:15px}.field input{width:0;min-width:0;flex:1;border:0;background:transparent;color:#242428;min-height:44px;font-size:17px;text-align:right;padding:4px;border-radius:5px}.field input:focus{outline:2px solid #80bfff}.field input[aria-invalid=true]{outline:2px solid #d53c34}.field input[type=datetime-local]{font-size:14px}.field input:disabled{color:#73737a;opacity:1}.hint{font-size:13px;color:#74747b;line-height:1.5;margin:8px 16px}.primary{background:var(--blue);color:white;border-radius:14px;width:100%;font-weight:600;margin-top:12px}.reviewbutton{background:#e4f3e9;color:#14743e}.error{color:#b3231b;font-size:14px;line-height:1.5;padding:10px 4px}.backbar{display:flex;align-items:center;justify-content:space-between;margin:8px -10px}.history{padding:12px 16px;background:white;border-radius:16px;font-size:13px;line-height:1.6}.history p{padding:10px 0;margin:0;border-bottom:1px solid var(--line)}.history p:last-child{border:0}.bottom{padding:0 22px 25px;font-size:12px;color:#74747b}.bottom a{color:#68788c}.utility{display:flex;justify-content:space-between;align-items:center;margin-top:15px}.utility button{font-size:13px;padding:5px}details{margin-top:24px;font-size:13px;color:#74747b}summary{min-height:44px;padding:14px 0;cursor:pointer}.now{font-size:12px;min-height:32px;padding:4px 0;display:block;margin-left:auto}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:white;padding:14px 20px;border-radius:14px;max-width:90%;font-size:14px;z-index:10}@media(min-width:650px){header{padding-top:35px}main{padding-top:8px}.field label{flex-basis:42%}}@media(max-width:360px){.row,.tablehead{gap:7px;padding-left:12px;padding-right:12px}.field{flex-wrap:wrap;gap:0}.field label{flex-basis:100%}.field input{flex-basis:100%;text-align:left}.field input[type=datetime-local]{font-size:16px}}
 
@@ -38,10 +38,40 @@ button:focus-visible,a:focus-visible{outline-color:#ff9f0a}.empty{color:#a1a1a6}
 
 /* UI037: direct numeric entry without spinner controls. */
 input[type=number]{appearance:textfield;-moz-appearance:textfield}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-</style></head><body><header><button type="button" id="screenBack">← Назад</button><div class="eyebrow"><span class="logo" aria-label="ЗУМ, временный текстовый знак">ЗУМ</span><span id="screen">M05-19 · UI042</span></div><div class="topline"><div><h1 id="heading">Термист</h1><div class="who" id="who"></div></div><button class="plus" id="add" aria-label="Добавить работу">+</button></div><p class="hint legend" id="legend">— Не начато · <span class="working">Т/О В работе</span> · <span class="done">твёрдость Завершено</span></p><div class="connection" id="connection" role="status" aria-live="polite"></div></header><main id="main"></main><div class="bottom"><div class="utility"><a id="advanced" href="/?view=advanced">Паспорта и садки</a><button id="logout">Выйти</button></div><details><summary>О журнале</summary><span id="demoInfo" hidden>Учебные записи сохраняются только в этом браузере. </span>Завершено — обработка записана, это не оценка соответствия и не разрешение на продукцию. Решение диспетчера и ОТК ведётся отдельно. Твёрдость вводится с единицей, если она известна. ЗУМ — временный текстовый знак до получения логотипа. <button id="export">Скачать историю</button></details></div><div id="toast" role="status" hidden></div><script>
-(()=>{'use strict';const boot={"advanced": false, "advancedHref": "./pilot-advanced.html", "demo": true, "database": "synthetic-ui029-v1", "revision": 0, "demoBacklink": "./index.html", "user": {"login": "Учебный термист", "role": "senior", "csrf": "not-a-real-session"}, "state": {"schema": 1, "boxes": [], "runs": [], "events": [], "paperQueue028": [{"id": "syn-q1", "order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 100, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}, {"id": "syn-q2", "order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 30, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}], "simpleJournal": [{"id": "syn-simple-1", "record": "syn-work-1", "actor": "Учебный термист", "recordedAt": "2026-10-29T06:00:00+00:00", "data": {"date": "2026-10-29", "order": "УЧ-001", "name": "Учебный болт М20×100", "qty": 100, "steel": "40Х", "initial": "", "start": "", "end": "", "final": ""}}]}};
+.journal-tools{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.journal-tools select,.journal-tools input{font:inherit;background:#151517;color:inherit;border:1px solid #48484a;border-radius:6px;padding:6px;max-width:100%}
+.tablehead,.row{grid-template-columns:5ch 5ch minmax(6ch,1fr) 5ch 2.5ch minmax(4ch,auto) 1ch;font-size:13px;gap:5px}
+.row{min-height:38px;padding:6px}.tablehead{padding:5px}.tablehead span{font-size:10px}
+.row .order,.row .name,.row .state{font-size:inherit;letter-spacing:normal}.row span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.waiting,.repeat{color:#ffd60a}
+.cycle-list{padding:8px}.cycle-list button{text-align:left;width:100%}
+.furnaces{overflow:auto}.furnaces table{border-collapse:collapse;width:100%}.furnaces th,.furnaces td{padding:8px;text-align:left;border-bottom:1px solid #48484a}
+.chart{display:block;width:100%;height:auto;background:#151517}.chart path{fill:none;stroke:#ff9f0a;stroke-width:2}.chart text{fill:#f5f5f7;font:11px system-ui}
+#connection{margin-top:12px}#recommendation{padding:8px;overflow-wrap:anywhere}
+.tablehead,.row{grid-template-columns:5ch 5ch 15ch 5ch 2.5ch minmax(4ch,auto) 1ch}
+.tablehead,.group{min-width:0}
+.journal-grid{overflow-x:auto}
+.journal-grid .tablehead,.journal-grid .group{min-width:365px}
+.row .nonconforming{color:#ff8ab3}
+#recommendation>summary{font-size:20px;font-weight:650;min-height:48px;padding:12px 0;color:#f5f5f7;cursor:pointer}
+.assessment{border:0;margin:8px 0;padding:0}
+.assessment label{display:flex;align-items:center;gap:10px;min-height:52px;padding:8px;border-bottom:1px solid var(--line);cursor:pointer}
+.assessment input{accent-color:#ff9f0a;width:21px;height:21px;flex:none}
+#furnaceHistory{width:min(94vw,740px);max-height:90vh;background:#151517;color:inherit;border:1px solid #48484a;border-radius:14px}
+#furnaceHistory::backdrop{background:#000a}
+#furnaceHistory form{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#furnaceHistory label{display:grid;gap:4px}
+#furnaceHistory h2{margin:0}
+.furnaces th button{padding:0;white-space:nowrap}
+</style></head><body><header><button type="button" id="screenBack">← Назад</button><div class="eyebrow"><span class="logo" aria-label="ЗУМ, временный текстовый знак">ЗУМ</span><span id="screen">M05-19 · UI044</span></div><div class="topline"><div><h1 id="heading">Термист</h1><div class="who" id="who"></div></div><button id="furnaceView" type="button">Что в печах</button><button class="plus" id="add" aria-label="Добавить работу">+</button></div></header><main id="main"></main><div class="bottom"><p class="hint legend" id="legend">— Не начато · <span class="working">Т/О В работе</span> · <span class="done">твёрдость Завершено</span></p><div class="connection" id="connection" role="status" aria-live="polite"></div><div class="utility"><a id="advanced" href="/?view=advanced">Паспорта и садки</a><button id="logout">Выйти</button></div><details><summary>О журнале</summary><span id="demoInfo" hidden>Учебные записи сохраняются только в этом браузере. </span>Завершено — обработка записана, это не оценка соответствия и не разрешение на продукцию. Решение диспетчера и ОТК ведётся отдельно. Твёрдость вводится с единицей, если она известна. ЗУМ — временный текстовый знак до получения логотипа. <button id="export">Скачать историю</button></details></div><div id="toast" role="status" hidden></div><script>
+(()=>{'use strict';const boot={"advanced": false, "advancedHref": "./pilot-advanced.html", "demo": true, "database": "synthetic-ui029-v1", "revision": 0, "demoBacklink": "./index.html", "user": {"login": "Учебный термист", "role": "senior", "csrf": "not-a-real-session"}, "state": {"schema": 1, "boxes": [], "runs": [], "events": [], "paperQueue028": [{"id": "syn-q1", "order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 100, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}, {"id": "syn-q2", "order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 30, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}], "simpleJournal": [{"id": "syn-simple-1", "record": "syn-work-1", "actor": "Учебный термист", "recordedAt": "2026-10-29T06:00:00+00:00", "data": {"date": "2026-10-29", "order": "УЧ-001", "name": "Учебный болт М20×100", "qty": 100, "steel": "40Х", "initial": "", "start": "", "end": "", "final": ""}}]}, "furnaces": {"1": "К №1", "2": "К №2", "3": "К №3", "5": "К №5", "6": "Ш №1", "7": "Ш №2"}, "heatModes": ["Закалка", "Нормализация", "Отпуск", "Отжиг", "Старение"]};
 const steelGrades=["3СП4", "3СП5", "10", "20", "25", "30", "35", "40", "45", "09Г2С", "10Г2", "30Х", "35Х", "40Х", "40ХН", "15ХМ", "30ХМ", "35ХМ", "30ХМА", "38ХА", "25Х1МФ", "25Х2М1Ф", "20Х1М1Ф1ТР", "20Х1М1Ф1БР", "18Х12ВМБФР", "20ХН3А", "ХН35ВТ", "12ХН35ВТ", "08Х13", "12Х13", "20Х13", "30Х13", "14Х17Н2", "18Х2Н4МА", "07Х16Н6", "12Х18Н9Т", "08Х18Н10Т", "12Х18Н10Т", "AISI_321", "08Х22Н6Т", "08Х21Н6М2Т", "10Х17Н13М2Т", "10Х17Н13М3Т", "08Х17Н15М3Т", "31Х19Н9МВБТ", "06ХН28МДТ", "07Х21Г7АН5", "10Х14Г14Н4Т", "08Х15Н24В4ТР", "08Х14Н20В2ТР", "37Х12Н8Г8МФБ", "45Х14Н14В2М", "10Х11Н23Т3МР", "13Х11Н2В2МФ", "15Х5М", "12Х1МФ", "30ХГСА", "20Х23Н18", "08Х17Н15М2Т"];
 const demo=!!boot.demo,me=boot.user,$=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),copy=x=>JSON.parse(JSON.stringify(x)),uuid=()=>crypto.randomUUID(),now=()=>new Date().toISOString(),writer=['senior','thermist'].includes(me.role),key='kist.simple032.'+boot.database+'.'+me.login;
+const furnaces=boot.furnaces, modes=boot.heatModes;
+const assessmentLabels={yes:'Твёрдость соответствует требуемой',no:'Твёрдость пока не соответствует требуемой'};
+const actorName=e=>boot.displayNames?.[e.actor]||e.actor;
+const temperatureLabels=new Map(), missingTimers=new Map();
+let showFurnaces=false, orderBy='chronology', period='month', dateFrom='', dateTo='';
+let nextCycle=null;
 let current=copy(boot),selected=null,filter='all',busy=false,pending=null,conflict=false,dirty=false,notice="",formError="",formTimes={start:"",end:""};
 const read=k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 if(demo){$('#demoInfo').hidden=false;const saved=read(key+'.demo');if(saved?.state)current=saved;$('#logout').textContent='Сбросить демо';$('#advanced').href=boot.advancedHref||'./pilot-advanced.html'}else pending=read(key+'.pending');
@@ -53,11 +83,266 @@ function download(name,data){const a=document.createElement('a'),u=URL.createObj
 function accept(j){if(j.database!==boot.database)throw Error('База заменена. Перезагрузите страницу и войдите заново.');current={...j,user:me}}
 function error(s){formError=s;const e=$('#error');if(e){e.textContent=s;e.focus()}else status(s)}
 async function send(){if(!pending||busy||conflict)return;busy=true;render();status('Сохраняем…');try{const r=await fetch('/api/state',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':me.csrf},body:JSON.stringify(pending)}),j=await r.json();if(!r.ok){if(r.status===409)conflict=true;const e=Error(j.error||'Ошибка сохранения');e.status=r.status;throw e}accept(j);notice="";formError="";pending=null;localStorage.removeItem(key+'.pending');localStorage.removeItem(read(key+'.pendingDraft')||draftKey());localStorage.removeItem(key+'.pendingDraft');selected=null;dirty=false;toast('Сохранено')}catch(e){if([400,403,404,413,415,422].includes(e.status)){pending=null;localStorage.removeItem(key+'.pending')}status(e.message);error(e.message)}finally{busy=false;render()}}
-const draftKey=()=>key+'.draft.'+(selected||'new');function clearDraft(){localStorage.removeItem(draftKey())}function formData(){const f=$('#form');if(!f)return null;return {...Object.fromEntries(new FormData(f)),...formTimes}}
+const draftKey=()=>key+'.draft.'+(selected||'new');function clearDraft(){localStorage.removeItem(draftKey())}function formData(){const f=$('#form');if(!f)return null;const data={conformity:'',...Object.fromEntries(new FormData(f))},prior=record(selected)?.data;
+if(data.ticket!==undefined){data.repeat=!!f.elements.repeat.checked;const source=prior||read(draftKey())||nextCycle;data.order=source?.order||'';data.name=source?.name||'';data.cycleOf=prior?.cycleOf||(selected?.startsWith('next:')?selected.slice(5):'');}
+return {...data,...formTimes}}
 function captureTimeEdit(ev){const name=ev.target?.name;if(name==='start'||name==='end')formTimes[name]=ev.target.value;saveDraft();if($('#review'))$('#review').disabled=true}
 function saveDraft(){if(!writer)return;const d=formData();if(d){dirty=true;write(draftKey(),d)}}
 function recovery(){return pending?`<div class="error">${conflict?'Журнал изменён другим участником. Скачай ввод перед обновлением.':'Сервер ещё не подтвердил запись. Не вводи её повторно.'}<button id="retry" ${busy||conflict?'disabled':''}>Повторить отправку</button><button id="pendingExport">Скачать ввод</button><button id="refresh">Обновить журнал</button></div>`:''}
-function list(){let rows=records();if(filter==='review')rows=rows.filter(e=>stateOf(e.data)==='done'&&!reviewed(e));return `${me.role==='senior'?`<div class="segment"><button data-filter="all" class="${filter==='all'?'active':''}">Все работы</button><button data-filter="review" class="${filter==='review'?'active':''}">Проверить · ${records().filter(e=>stateOf(e.data)==='done'&&!reviewed(e)).length}</button></div>`:''}${recovery()}<div class="tablehead"><span>Заказ</span><span>Наименование</span><span style="text-align:right">Статус</span></div><div class="group">${rows.map(e=>{const d=e.data,s=stateOf(d);return `<button class="row" data-record="${esc(e.record)}" aria-label="${esc(d.order+' '+d.name+' '+({waiting:'Не начато',working:'В работе',done:'Завершено'}[s]))}"><span class="order">${esc(d.order||'—')}</span><span class="name" title="${esc(d.name)}">${esc(d.name||'—')}</span><span class="state ${s}">${s==='waiting'?'—':s==='working'?'Т/О':esc(d.final)}${reviewed(e)?'<span class="reviewmark">Проверено ✓</span>':''}</span></button>`}).join('')||'<div class="empty">'+(filter==='review'?'Все завершённые записи проверены':'Работ пока нет.<br>Нажми «+», чтобы добавить первую.')+'</div>'}</div>`}
+function productName(d){
+  return d.product ? [d.product, d.diameter&&'М'+d.diameter, d.length&&'×'+d.length].filter(Boolean).join(' ') : d.name;
+}
+function selectField(name,label,options,value){
+  return '<div class="field"><label for="f-'+name+'">'+label+'</label><select id="f-'+name+'" name="'+name+'" '+(!writer?'disabled':'')+'>'+options.map(([key,title])=>'<option value="'+esc(key)+'" '+(key===value?'selected':'')+'>'+esc(title)+'</option>').join('')+'</select></div>';
+}
+function periodStart(){
+  const date=new Date();
+  if(period==='month')date.setDate(date.getDate()-29);
+  if(period==='week')date.setDate(date.getDate()-6);
+  return local(date.toISOString()).slice(0,10);
+}
+function list(){
+  let rows=records();
+  if(filter==='review')rows=rows.filter(e=>stateOf(e.data)==='done'&&!reviewed(e));
+  if(period!=='all'){
+    const lower=period==='range'?dateFrom:periodStart(), upper=period==='range'?dateTo:today();
+    rows=rows.filter(e=>{const date=e.data.date||local(e.recordedAt).slice(0,10);return (!lower||date>=lower)&&(!upper||date<=upper)});
+  }
+  const sortValue=e=>orderBy==='actor'?(boot.displayNames?.[e.actor]||e.actor):orderBy==='steel'?e.data.steel:orderBy==='repeat'?Number(e.data.repeat===true):'';
+  const when=e=>e.data.start||e.data.date||e.recordedAt;
+  rows.sort((a,b)=>String(sortValue(a)).localeCompare(String(sortValue(b)),'ru')*(orderBy==='repeat'?-1:1)
+    ||when(b).localeCompare(when(a))||b.recordedAt.localeCompare(a.recordedAt));
+  const dropdown=(id,label,options,chosen)=>'<label>'+label+' <select id="'+id+'">'+options.map(([key,title])=>'<option value="'+key+'" '+(key===chosen?'selected':'')+'>'+title+'</option>').join('')+'</select></label>';
+  const controls='<div class="journal-tools">'+dropdown('orderBy','Упорядочить',[['chronology','Хронология'],['actor','Фамилия'],['steel','Сталь'],['repeat','Повторно']],orderBy)+dropdown('period','Диапазон',[['month','Месяц'],['week','Неделя'],['all','Весь период'],['range','Выбрать']],period)+(period==='range'?'<label>С <input id="dateFrom" type="date" value="'+esc(dateFrom)+'"></label><label>По <input id="dateTo" type="date" value="'+esc(dateTo)+'"></label>':'')+'</div>';
+  const reviews=me.role==='senior'?'<div class="segment"><button data-filter="all" class="'+(filter==='all'?'active':'')+'">Все работы</button><button data-filter="review" class="'+(filter==='review'?'active':'')+'">Проверить · '+records().filter(e=>stateOf(e.data)==='done'&&!reviewed(e)).length+'</button></div>':'';
+  const cells=(value,length,cls='',checked=false)=>'<span class="'+cls+'" title="'+esc(value)+'">'+esc(String(value).slice(0,length))+(checked?'<span class="reviewmark"> ✓</span>':'')+'</span>';
+  return controls+reviews+recovery()+'<div class="journal-grid"><div class="tablehead"><span>Наряд</span><span>Фамилия</span><span>Изделие</span><span>Сталь</span><span>Шт.</span><span>Статус</span><span></span></div><div class="group">'+(rows.map(e=>{
+    const d=e.data, state=stateOf(d), title=state==='done'?d.final:state==='working'?(d.mode||(d.ticket?'—':'Т/О')):(d.mode||'—');
+    return '<button class="row" data-record="'+esc(e.record)+'">'+cells(d.ticket||d.order||'—',d.ticket?5:100,'order')+cells(actorName(e),5)+cells(productName(d)||'—',15,'name')+cells(d.steel||'—',5)+cells(d.qty??'—',2)+cells(title,state==='done'&&d.ticket?5:30,'state '+state+(d.conformity==='no'?' nonconforming':''),reviewed(e))+cells(d.repeat?'п':'',1,'repeat')+'</button>';
+  }).join('')||'<div class="empty">Нет записей за выбранный период</div>')+'</div></div>';
+}
+function family(e){
+  if(!e)return [];
+  const root=e.data.cycleOf||e.record;
+  return records().filter(x=>x.record===root||x.data.cycleOf===root);
+}
+function cycleList(e){
+  const related=family(e).reverse(), done=related.filter(x=>stateOf(x.data)==='done');
+  return '<div class="cycle-list"><h2>Завершённые операции</h2>'+(done.map(x=>'<button type="button" data-record="'+esc(x.record)+'">'+esc((x.data.mode||productName(x.data)||'Операция'))+(x.data.repeat?' · п':'')+' · '+esc(fmt(x.data.start))+' — '+esc(fmt(x.data.end))+'</button>').join('')||'<p class="hint">Пока нет завершённых операций</p>')+
+    related.filter(x=>x.record!==e?.record&&stateOf(x.data)!=='done').map(x=>'<button type="button" data-record="'+esc(x.record)+'">'+esc(x.data.mode||'Операция')+(x.data.repeat?' · п':'')+' · '+(x.data.start?'В работе':'Не начато')+'</button>').join('')+'</div>';
+}
+function cycleFields(d,e){
+  if((e||d.order)&&d.ticket===undefined)return field('order','Заказ',orderNumber(d.order))+field('name','Наименование',d.name);
+  return field('ticket','Наряд',d.ticket||'')+(!d.product&&d.name?'<p class="hint">'+esc(d.name)+'</p>':'')+
+    selectField('product','Вид продукции',[['','Выбери'],...['Болт','Шпилька','Гайка'].map(x=>[x,x])],d.product)+
+    field('diameter','Диаметр / резьба',d.diameter||'')+field('length','Длина',d.length||'')+
+    '<label><input name="repeat" type="checkbox" '+(d.repeat?'checked':'')+' '+(!writer?'disabled':'')+'> Повторно · незапланированный цикл</label>';
+}
+function referenceFields(d){
+  return '<details id="recommendation" open><summary>Рекомендуемые режимы Т/О</summary><div id="recommendationBody"></div></details>'+
+    selectField('hardnessScale','Шкала твёрдости',['','HB','HBW','HRC','HRB','HRA','HV'].map(x=>[x,x||'Не указана']),d.hardnessScale??'');
+}
+function assessmentField(value){
+  return '<fieldset class="assessment"><legend>Оценка твёрдости</legend>'+
+    Object.entries(assessmentLabels).map(([id,label])=>'<label><input type="radio" name="conformity" value="'+id+'" '+
+      (id===value?'checked ':'')+(!writer?'disabled':'')+'>'+label+'</label>').join('')+'</fieldset>'+
+    (writer?'<button type="button" id="clearAssessment" '+(value?'':'hidden')+'>Снять оценку</button>':'');
+}
+async function readApi(path,action,fields={}){
+  const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':me.csrf},
+    body:JSON.stringify({action,command:uuid(),database:current.database,...fields})});
+  const data=await response.json();
+  if(!response.ok)throw Error(data.error);
+  return data;
+}
+function logCycleOpen(previousCycle){
+  if(demo)return;
+  readApi('/api/registry','heat_cycle_open',{previousCycle}).catch(e=>status('Открытие формы не подтверждено: '+e.message));
+}
+function recommendationRows(r,mode){
+  const p=r.payload;
+  const spec=p.reviewed_spec;
+  if(spec)return (spec.steps||[]).filter(x=>x.operation===mode).map(x=>[x.cooling,(x.temperature_c||[]).join('…'),
+    [spec.hardness?.min,spec.hardness?.max].filter(x=>x!=null).join('…')+' '+(spec.hardness?.scale||''),[x.heat_rule,x.hold_rule].filter(Boolean).join(' · ')]);
+  if(p.steps)return p.steps.filter(x=>{
+    const operation=modes.find(m=>String(x.temperature_raw||'').toLowerCase().includes(m.toLowerCase()));
+    return (operation||modes.find(m=>String(x.operation_header||'').toLowerCase().includes(m.toLowerCase())))===mode;
+  }).filter(x=>x.temperature_raw||x.cooling_raw).map(x=>[x.cooling_raw,x.temperature_raw,'','']);
+  const facts=(p.facts||[]).filter(x=>x.operation_context===mode);
+  const values=(items,re)=>items.filter(x=>re.test(x.classification)).map(x=>x.value).filter(Boolean).join(' · ');
+  const thermal=values(facts,/TEMPERATURE_OR_COOLING/);
+  const medium=(thermal.match(/воздух|масл[оае]|вод[аеуы]|остывание с печью/gi)||[]).join(' · ');
+  const time=values(facts,/HEAT_UP|HOLD/);
+  return thermal||time?[[medium,thermal,values((p.facts||[]).filter(x=>!x.operation_context||x.operation_context===mode),/HARDNESS/),time]]:[];
+}
+let recommendationRequest=0;
+const recommendationCache=new Map();
+function dimensionMatches(spec,product,diameter,length){
+  const normalize=value=>String(value||'').trim().toLocaleLowerCase('ru-RU');
+  const within=(value,range)=>Array.isArray(range)&&range.length===2&&Number(value)>0&&
+    Number(value)>=range[0]&&Number(value)<=range[1];
+  return normalize(spec.product)===normalize(product)&&
+    ['диаметр','резьба','диаметр / резьба','диаметр резьбы','номинальный диаметр','номинальный диаметр резьбы','наружный диаметр резьбы'].includes(normalize(spec.diameter_kind))&&
+    within(diameter,spec.diameter_mm)&&(product==='Гайка'||within(length,spec.length_mm));
+}
+async function showRecommendation(){
+  const body=$('#recommendationBody'), steel=$('#f-steel')?.value.trim(), mode=$('#f-mode')?.value;
+  const request=++recommendationRequest;
+  if(!body)return;
+  const mediumHint=$('#recommendedMedium');
+  if(mediumHint)mediumHint.textContent='';
+  if(!steel){body.textContent='Укажи сталь';return}
+  if(!mode){body.textContent='Выбери режим';return}
+  const form=$('#form'), product=form.elements.product?.value, diameter=form.elements.diameter?.value,
+    length=form.elements.namedItem('length')?.value;
+  if(demo){body.textContent='Каталог режимов доступен в общей базе';return}
+  body.textContent='Загружаем…';
+  try{
+    if(!recommendationCache.has(steel)){
+      recommendationCache.set(steel,readApi('/api/registry','heat_list',{steel,exact:true})
+        .catch(e=>{recommendationCache.delete(steel);throw e}));
+    }
+    const {rows}=await recommendationCache.get(steel);
+    if(request!==recommendationRequest||!body.isConnected)return;
+    const candidates=rows.map(r=>[r,recommendationRows(r,mode)]).filter(([,variants])=>variants.length);
+    const matches=candidates.filter(([r])=>r.decision==='APPROVE'&&r.payload.reviewed_spec&&
+      dimensionMatches(r.payload.reviewed_spec,product,diameter,length));
+    const media=[...new Set(matches.flatMap(([,variants])=>variants.map(row=>row[0]).filter(Boolean)))];
+    if(mediumHint&&media.length)mediumHint.textContent='По базе: '+media.join(' / ');
+    const references=candidates.filter(([r])=>!r.payload.reviewed_spec&&r.decision!=='WITHDRAW');
+    const cards=items=>items.map(([r,variants])=>'<details open><summary>'+esc(r.steel+' · '+r.title+
+      ' · редакция '+r.number)+'</summary>'+variants.map(row=>'<dl>'+['Среда / охлаждение','Температура',
+      'Твёрдость','Нагрев / выдержка'].map((label,i)=>'<dt>'+label+'</dt><dd>'+esc(row[i]||'—')+'</dd>').join('')+
+      '</dl>').join('')+'</details>').join('');
+    body.innerHTML=matches.length
+      ? '<p>Сверь исходное состояние, требования и оборудование по ТИ.</p>'+cards(matches)
+      : '<p>'+(!product||!diameter||(product!=='Гайка'&&!length)
+        ? 'Укажи изделие, диаметр / резьбу и длину для болта или шпильки'
+        : 'Допущенный режим для этих размеров не найден')+'</p>';
+    if(references.length)body.insertAdjacentHTML('beforeend',
+      '<details><summary>Исходные сведения по стали и режиму</summary><p>Применимость к размерам не подтверждена.</p>'+
+      cards(references)+'</details>');
+  }catch(e){if(request===recommendationRequest)body.textContent=e.message}
+}
+function furnaceScreen(){
+  const active=records().filter(e=>e.data.start&&!e.data.end&&e.data.furnace);
+  return '<div class="furnaces"><h2>Что сейчас в печах</h2><table><thead><tr><th>Печь</th><th>Наряд</th><th>Название</th><th>Сталь</th><th>Режим</th><th>Температура</th></tr></thead><tbody>'+
+    Object.entries(furnaces).map(([id,name])=>{
+      const rows=active.filter(e=>e.data.furnace===id);
+      return (rows.length?rows:[null]).map(e=>'<tr><th><button type="button" data-furnace="'+id+'">'+esc(name)+'</button></th><td>'+(e?'<button type="button" data-record="'+esc(e.record)+'">'+esc(e.data.ticket||e.data.order||'—')+'</button>':'—')+'</td><td>'+esc(e?productName(e.data):'—')+'</td><td>'+esc(e?.data.steel||'—')+'</td><td>'+esc(e?.data.mode||'—')+'</td><td data-temperature="'+id+'">'+esc(temperatureLabels.get(id)||'Загружаем…')+'</td></tr>').join('');
+    }).join('')+'</tbody></table></div>';
+}
+function telemetryMessage(status){
+  return ({unmapped:'Канал температуры не привязан',unconfigured:'OwenCloud не подключён',unavailable:'OwenCloud временно недоступен',empty:'Нет измерений за выбранный период'})[status]||'Нет данных';
+}
+function displayTemperature(id,label){
+  temperatureLabels.set(id,label);
+  document.querySelectorAll('[data-temperature="'+id+'"]').forEach(cell=>cell.textContent=label);
+}
+function scheduleMissing(id){
+  if(missingTimers.has(id))return;
+  missingTimers.set(id,setTimeout(()=>{
+    missingTimers.delete(id);
+    displayTemperature(id,'Нет данных');
+  },5000));
+}
+let temperatureLoading=false;
+async function updateTemperatures(){
+  if(temperatureLoading)return;
+  if(demo){Object.keys(furnaces).forEach(id=>displayTemperature(id,'Учебный экран'));return}
+  temperatureLoading=true;
+  Object.keys(furnaces).filter(id=>!temperatureLabels.has(id)).forEach(scheduleMissing);
+  try{
+    const readings=await readApi('/api/heat-telemetry','latest');
+    for(const id of Object.keys(furnaces)){
+      const result=readings[id], point=result?.points?.at(-1);
+      if(point?.[1]==null&&!['unconfigured','unmapped'].includes(result?.status)){
+        scheduleMissing(id);
+        continue;
+      }
+      clearTimeout(missingTimers.get(id));
+      missingTimers.delete(id);
+      displayTemperature(id,point?.[1]!=null?point[1]+' °C · '+fmt(point[0]):telemetryMessage(result.status));
+    }
+  }catch{
+    Object.keys(furnaces).forEach(scheduleMissing);
+  }finally{temperatureLoading=false}
+}
+function furnaceOperations(id,from,to){
+  const stamp=s=>s?fmt(s):'—';
+  const rows=records().filter(({data:d})=>d.furnace===id&&d.start&&
+    Date.parse(d.start)<=Date.parse(to)&&(!d.end||Date.parse(d.end)>=Date.parse(from)))
+    .sort((a,b)=>Date.parse(a.data.start)-Date.parse(b.data.start));
+  return '<div class="furnaces"><h3>Операции за период</h3>'+(rows.length?
+    '<table><thead><tr>'+['Начало','Окончание','Наряд','Режим','Фамилия','Оценка']
+      .map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>'+rows.map(({data,...event})=>'<tr>'+
+      [stamp(data.start),stamp(data.end),data.ticket||data.order||'—',data.mode||'—',actorName(event),
+        assessmentLabels[data.conformity]||'—'].map(x=>'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+
+      '</tbody></table>':'<p>Операций за период нет.</p>')+'</div>';
+}
+function openFurnaceHistory(id){
+  const dialog=document.createElement('dialog');
+  const to=new Date(),from=new Date(+to-24*60*60*1000);
+  dialog.id='furnaceHistory';
+  dialog.setAttribute('aria-labelledby','furnaceTitle');
+  dialog.innerHTML='<h2 id="furnaceTitle">'+esc(furnaces[id])+' · история</h2>'+
+    '<form><label>С <input name="from" type="datetime-local" value="'+local(from.toISOString())+'" required></label>'+
+    '<label>По <input name="to" type="datetime-local" value="'+local(to.toISOString())+'" required></label>'+
+    '<button>Показать</button><button type="button" data-close>Закрыть</button></form>'+
+    '<div data-chart aria-live="polite"></div><div data-operations></div>';
+  document.body.append(dialog);
+  dialog.onclose=()=>dialog.remove();
+  dialog.querySelector('[data-close]').onclick=()=>dialog.close();
+  dialog.showModal();
+  const form=dialog.querySelector('form'), chart=dialog.querySelector('[data-chart]'),
+    operations=dialog.querySelector('[data-operations]');
+  let request=0;
+  form.onsubmit=async ev=>{
+    ev.preventDefault();
+    const revision=++request, start=new Date(form.elements.from.value), end=new Date(form.elements.to.value);
+    operations.innerHTML='';
+    if(!(end>start)||end-start>7*86400000){chart.textContent='Выбери период от одной минуты до семи суток';return}
+    const from=start.toISOString(),to=end.toISOString();
+    operations.innerHTML=furnaceOperations(id,from,to);
+    if(demo){chart.textContent='Архив доступен в общей базе';return}
+    chart.textContent='Загружаем архив…';
+    try{
+      const result=await readApi('/api/heat-telemetry','furnace_archive',{furnace:id,from,to});
+      if(revision!==request||!dialog.isConnected)return;
+      chart.innerHTML=result.status==='ok'?temperatureChart(result.points,result.start,result.end):
+        '<p>'+esc(telemetryMessage(result.status))+'</p>';
+    }catch(e){if(revision===request&&dialog.isConnected)chart.textContent=e.message}
+  };
+}
+function temperatureChart(points,from,to){
+  let low=Infinity,high=-Infinity;
+  for(const [,temperature] of points)if(temperature!=null){low=Math.min(low,temperature);high=Math.max(high,temperature)}
+  if(!Number.isFinite(low))return '<p>Нет достоверных измерений</p>';
+  const start=Date.parse(from), end=Date.parse(to);
+  const x=t=>45+440*(Date.parse(t)-start)/Math.max(end-start,1), y=t=>140-120*(t-low)/Math.max(high-low,1);
+  let path='', prev=null;
+  const dots=[];
+  for(const [time,temp] of points){
+    if(temp==null){prev=null;continue}
+    const px=x(time).toFixed(1),py=y(temp).toFixed(1);
+    path+=(prev!==null&&Date.parse(time)-prev<=300000?'L':'M')+px+' '+py+' ';
+    dots.push('<circle cx="'+px+'" cy="'+py+'" r="1.5" fill="#ff9f0a"/>');
+    prev=Date.parse(time);
+  }
+  return '<svg class="chart" role="img" aria-label="Фактическая температура печи" viewBox="0 0 500 168"><text x="2" y="20">'+high+' °C</text><text x="2" y="140">'+low+' °C</text><path d="'+path+'"/>'+dots.join('')+'<text x="45" y="160">'+esc(fmt(from))+'</text><text x="485" y="160" text-anchor="end">'+esc(fmt(to))+'</text></svg>';
+}
+async function viewChart(){
+  const e=record(selected), target=$('#temperatureChart');
+  if(dirty){target.textContent='Сохрани изменения перед просмотром графика';return}
+  if(!e?.data.start){target.textContent='Сохрани начало цикла';return}
+  if(!e.data.furnace){target.textContent='Печь не указана';return}
+  if(demo){target.textContent='Архив доступен в общей базе';return}
+  target.textContent='Загружаем архив…';
+  try{
+    const result=await readApi('/api/heat-telemetry','archive',{record:e.record});
+    target.innerHTML=result.status==='ok'?temperatureChart(result.points,result.start,result.end):'<p>'+esc(telemetryMessage(result.status))+'</p>';
+  }catch(e){target.textContent=e.message}
+}
 function orderPrefix(){const e=record(selected);return e&&e.data.order&&!/^З\s*[-–—]/i.test(e.data.order)?'':'З-'}
 function orderNumber(v){return orderPrefix()?String(v??'').replace(/^З\s*[-–—]\s*/i,''):v}
 function fullOrder(v){const n=String(v??'').trim();const suffix=n.replace(/^(?:З\s*[-–—]\s*)+/i,'');return orderPrefix()?(suffix?'З-'+suffix:''):n}
@@ -66,18 +351,44 @@ function steelField(v){return '<div class="field steel-field"><label for="f-stee
 let steelIndex=-1;
 function closeSteels(){const input=$('#f-steel'),list=$('#steel-options');if(list)list.hidden=true;if(input){input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant')}steelIndex=-1}
 function suggestSteels(){const input=$('#f-steel'),list=$('#steel-options');if(!input||!writer)return;const prefix=input.value.trim().toLocaleUpperCase('ru-RU');const matches=prefix?steelGrades.filter(x=>x.toLocaleUpperCase('ru-RU').startsWith(prefix)):[];list.innerHTML=matches.map((x,i)=>'<button type="button" role="option" id="steel-option-'+i+'" aria-selected="false" data-steel="'+esc(x)+'">'+esc(x)+'</button>').join('');list.hidden=!matches.length;input.setAttribute('aria-expanded',String(!!matches.length));input.removeAttribute('aria-activedescendant');steelIndex=-1}
-function selectSteel(value){$('#f-steel').value=value;saveDraft();if($('#review'))$('#review').disabled=true;$('#f-steel').focus();closeSteels()}
+function selectSteel(value){$('#f-steel').value=value;saveDraft();if($('#review'))$('#review').disabled=true;$('#f-steel').focus();closeSteels();showRecommendation()}
 function bindSteel(){const input=$('#f-steel');if(!input||!writer)return;input.oninput=suggestSteels;input.onfocus=suggestSteels;input.onkeydown=ev=>{const options=[...document.querySelectorAll('[data-steel]')];if(ev.key==='Escape'){closeSteels();return}if(['ArrowDown','ArrowUp'].includes(ev.key)&&options.length){ev.preventDefault();steelIndex=(steelIndex+(ev.key==='ArrowDown'?1:-1)+options.length)%options.length;options.forEach((x,i)=>x.setAttribute('aria-selected',String(i===steelIndex)));input.setAttribute('aria-activedescendant',options[steelIndex].id);options[steelIndex].scrollIntoView?.({block:'nearest'})}if(ev.key==='Enter'&&steelIndex>=0&&!$('#steel-options').hidden){ev.preventDefault();selectSteel(options[steelIndex].dataset.steel)}};input.onblur=()=>setTimeout(()=>{if(!document.activeElement?.closest('.steel-control'))closeSteels()},150)}
-function field(n,label,v,type='text',required=false){return `<div class="field"><label for="f-${n}">${label}</label>${n==='order'?'<span class="order-prefix" aria-hidden="true">'+esc(orderPrefix())+'</span>':''}<input id="f-${n}" name="${n}" type="${type}" value="${esc(v)}" ${required?'required':''} ${n==='qty'?'min="0" max="1000000000" step="1" inputmode="numeric"':''} ${type==='text'?'maxlength="500"':''} ${type==='datetime-local'?'autocomplete="off"':''} ${!writer?'disabled':''}></div>`}
-function detail(){const e=record(selected),d=read(draftKey())||e?.data||empty();formTimes={start:d.start||'',end:d.end||''};const v={...d,start:d.start?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.start||'')?local(d.start):d.start,end:d.end?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.end||'')?local(d.end):d.end};return `<div class="backbar"><button id="back">‹ Работы</button><span class="hint">${e?esc(e.data.date):'Новая работа'}</span></div>${recovery()}<form id="form" novalidate><div class="card">${field('date','Дата',v.date,'date')}${field('order','Заказ',orderNumber(v.order))}${field('name','Наименование',v.name)}${field('qty','Количество, шт.',v.qty,'number')}${steelField(v.steel)}${mediumField(v.medium||'')}<button class="regime" type="button" aria-label="Подсказки по режимам">Режим</button>${field('initial','Твёрдость начальная',v.initial)}</div><div class="card">${field('start','Начало',v.start,'datetime-local')}${writer?'<button class="now" type="button" data-now="start">Начало — сейчас</button>':''}${field('end','Окончание',v.end,'datetime-local')}${writer?'<button class="now" type="button" data-now="end">Окончание — сейчас</button>':''}${field('final','Твёрдость конечная',v.final)}</div><div class="error" id="error" role="alert" tabindex="-1">${esc(formError)}</div>${writer?`<button class="primary" id="save" ${allowed()?'':'disabled'}>Сохранить</button>`:''}<p class="hint">Очередь можно заполнить заранее: неизвестное оставь пустым. Например, твёрдость: 35 HRC. «Сейчас» подставляет время — запись появится после сохранения.</p></form>${me.role==='senior'&&e&&stateOf(e.data)==='done'?`<button class="primary reviewbutton" id="review" ${allowed()&&!reviewed(e)&&!dirty?'':'disabled'}>${reviewed(e)?'Запись проверена ✓':'Проверить запись'}</button><p class="hint">Проверка записи старшим не разрешает выпуск продукции.</p>`:''}${e?`<details><summary>История записи · ${entries().filter(x=>x.record===selected).length}</summary><div class="history">${entries().filter(x=>x.record===selected).map(x=>`<p><b>${x.reviewOf?'Проверка старшим':'Сохранение записи'}</b><br>${esc(x.actor)} · ${esc(fmt(x.recordedAt))}${x.data?'<br>'+esc(x.data.order+' · '+x.data.name+' · '+(x.data.qty??'—')+' шт. · '+x.data.steel)+'<br>Среда: '+esc(x.data.medium||'—')+'<br>Начальная: '+esc(x.data.initial||'—')+' · конечная: '+esc(x.data.final||'—')+'<br>Начало: '+esc(x.data.start?fmt(x.data.start):'—')+'<br>Окончание: '+esc(x.data.end?fmt(x.data.end):'—'):''}</p>`).join('')}</div></details>`:''}`}
-function render(){const isDetail=selected!==null;$('#screen').textContent=(isDetail?'M05-20':'M05-19')+' · UI042';$('#heading').textContent=isDetail?(selected==='new'?'Новая работа':'Работа'):me.role==='senior'?'Старший термист':'Термист';$('#who').textContent=demo?'':me.login;$('#who').hidden=demo;$('#legend').hidden=isDetail;$('#add').hidden=isDetail||!writer;$('#add').disabled=!allowed();$('#main').innerHTML=isDetail?detail():list();status();if($('#form')){$('#form').oninput=captureTimeEdit;$('#form').onchange=captureTimeEdit;$('#form').onsubmit=save;bindSteel()}if($('#back'))$('#back').onclick=()=>{saveDraft();selected=null;dirty=false;render()};if($('#review'))$('#review').onclick=()=>append({id:uuid(),record:selected,reviewOf:record(selected).id});if($('#retry'))$('#retry').onclick=send;if($('#pendingExport'))$('#pendingExport').onclick=()=>download('kist-unconfirmed.json',pending);if($('#refresh'))$('#refresh').onclick=async()=>{if(!confirm('Сначала скачай неподтверждённый ввод. Убрать его из этой вкладки и обновить журнал?'))return;try{const r=await fetch('/api/state',{cache:'no-store'}),j=await r.json();if(!r.ok)throw Error(j.error);accept(j);notice="";formError="";pending=null;conflict=false;localStorage.removeItem(key+'.pending');render()}catch(e){status(e.message)}}}
+function field(n,label,v,type='text',required=false){const fixedTicket=n==='ticket'&&(record(selected)?.data.ticket||(selected?.startsWith('next:')&&family(record(selected.slice(5))).some(x=>x.data.ticket)));const width={ticket:5,diameter:2,length:3}[n];return `<div class="field"><label for="f-${n}">${label}</label>${n==='order'?'<span class="order-prefix" aria-hidden="true">'+esc(orderPrefix())+'</span>':''}<input id="f-${n}" name="${n}" type="${type}" value="${esc(v)}" ${required?'required':''} ${n==='qty'?'min="0" max="1000000000" step="1" inputmode="numeric"':''} ${type==='text'?'maxlength="'+(width||500)+'"':''} ${width?'inputmode="numeric"':''} ${type==='datetime-local'?'autocomplete="off"':''} ${!writer?'disabled':fixedTicket?'readonly':''}></div>`}
+function detail(){const e=record(selected),d=read(draftKey())||e?.data||(selected?.startsWith('next:')?nextCycle:null)||{...empty(),hardnessScale:'HB'};formTimes={start:d.start||'',end:d.end||''};const v={...d,start:d.start?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.start||'')?local(d.start):d.start,end:d.end?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.end||'')?local(d.end):d.end};return `<div class="backbar"><button id="back">‹ Работы</button><span class="hint">${e?esc(e.data.date):'Новая операция'}</span></div>${recovery()}${e?'<p class="hint">'+esc(productName(v)||'')+'</p>':''}${cycleList(e||record(d.cycleOf))}<h2>Операция ${writer&&e?'<button type="button" id="nextCycle" aria-label="Следующий цикл">+</button>':''}</h2><form id="form" novalidate><div class="card">${field('date','Дата',v.date,'date')}${cycleFields(v,e)}${field('qty','Количество, шт.',v.qty,'number')}${steelField(v.steel)}${selectField('mode','Режим',[['','Выбери'],...modes.map(x=>[x,x])],v.mode)}
+${mediumField(v.medium||'')}${selectField('furnace','Печь №',[['','Печь не указана'],...Object.entries(furnaces)],v.furnace)}
+<p id="recommendedMedium" class="hint" aria-live="polite"></p>${field('actualMedium','Фактическая среда (если изменена)',v.actualMedium||'')}<button class="regime" type="button" aria-label="Открыть каталог режимов">Каталог режимов</button>${referenceFields(v)}${field('initial','Твёрдость начальная',v.initial)}</div><div class="card">${field('start','Начало',v.start,'datetime-local')}${writer?'<button class="now" type="button" data-now="start">Начало — сейчас</button>':''}${field('end','Окончание',v.end,'datetime-local')}${writer?'<button class="now" type="button" data-now="end">Окончание — сейчас</button>':''}${field('final','Твёрдость конечная',v.final)}
+</div><div class="card"><h2>Оценка соответствия</h2>
+${assessmentField(v.conformity)}
+<button type="button" id="viewChart">Просмотр терморежима</button><div id="temperatureChart"></div>
+${boot.heatInstructionUrl?'<a href="'+esc(boot.heatInstructionUrl)+'">Технологическая инструкция</a>':'<p class="hint">Ссылка на действующую ТИ пока не настроена</p>'}
+</div><div class="error" id="error" role="alert" tabindex="-1">${esc(formError)}</div>${writer?`<button class="primary" id="save" ${allowed()?'':'disabled'}>Сохранить</button>`:''}<p class="hint">Очередь можно заполнить заранее: неизвестное оставь пустым. Например, твёрдость: 35 HRC. «Сейчас» подставляет время — запись появится после сохранения.</p></form>${me.role==='senior'&&e&&stateOf(e.data)==='done'?`<button class="primary reviewbutton" id="review" ${allowed()&&!reviewed(e)&&!dirty?'':'disabled'}>${reviewed(e)?'Запись проверена ✓':'Проверить запись'}</button><p class="hint">Проверка записи старшим не разрешает выпуск продукции.</p>`:''}${e?`<details><summary>История записи · ${entries().filter(x=>x.record===selected).length}</summary><div class="history">${entries().filter(x=>x.record===selected).map(x=>`<p><b>${x.reviewOf?'Проверка старшим':'Сохранение записи'}</b><br>${esc(x.actor)} · ${esc(fmt(x.recordedAt))}${x.data?'<br>'+esc((x.data.ticket||x.data.order)+' · '+productName(x.data)+' · '+(x.data.qty??'—')+' шт. · '+x.data.steel)+'<br>Печь: '+esc(furnaces[x.data.furnace]||'не указана')+' · '+esc(x.data.mode||'—')+'<br>Среда: '+esc(x.data.actualMedium||x.data.medium||'—')+'<br>Начальная: '+esc(x.data.initial||'—')+' · конечная: '+esc(x.data.final||'—')+'<br>Начало: '+esc(x.data.start?fmt(x.data.start):'—')+'<br>Окончание: '+esc(x.data.end?fmt(x.data.end):'—'):''}</p>`).join('')}</div></details>`:''}`}
+function render(){const isDetail=selected!==null;$('#furnaceView').hidden=isDetail||showFurnaces;$('#screen').textContent=(showFurnaces?'Что в печах':isDetail?'M05-20':'M05-19')+' · UI044';$('#heading').textContent=showFurnaces?'Что в печах':isDetail?'Операции':me.role==='senior'?'Старший термист':me.role==='dispatcher'?'Диспетчер':'Термист';$('#who').textContent=demo?'':me.login;$('#who').hidden=demo;$('#legend').hidden=isDetail||showFurnaces;$('#add').hidden=showFurnaces||!writer;$('#add').disabled=!allowed();$('#main').innerHTML=showFurnaces?furnaceScreen():isDetail?detail():list();status();
+for(const [id,assign] of [['orderBy',v=>orderBy=v],['period',v=>period=v],['dateFrom',v=>dateFrom=v],['dateTo',v=>dateTo=v]]){
+  const field=$('#'+id);
+  if(field)field.onchange=()=>{assign(field.value);render()};
+}
+if($('#viewChart'))$('#viewChart').onclick=viewChart;
+if($('#nextCycle'))$('#nextCycle').onclick=()=>{if(!allowed())return;if(dirty)saveDraft();formError='';const e=record(selected),d=e.data;logCycleOpen(e.record);nextCycle={...empty(),cycleOf:d.cycleOf||e.record,ticket:d.ticket||family(e).find(x=>x.data.ticket)?.data.ticket||'',order:d.order,name:d.name,product:d.product,
+  diameter:d.diameter,length:d.length,qty:d.qty,steel:d.steel,initial:d.end?d.final:d.initial,
+  hardnessScale:d.hardnessScale??(d.end?'':'HB')};selected='next:'+nextCycle.cycleOf;dirty=!!read(draftKey());render()};
+if($('#form')){$('#form').oninput=captureTimeEdit;$('#form').onchange=ev=>{captureTimeEdit(ev);if(ev.target.name==='conformity')$('#clearAssessment').hidden=false;if(['steel','mode','product','diameter','length'].includes(ev.target.name))showRecommendation()};$('#form').onsubmit=save;bindSteel();showRecommendation();
+const clear=$('#clearAssessment');if(clear)clear.onclick=()=>{for(const input of $('#form').elements.conformity)input.checked=false;saveDraft();render()};}if($('#back'))$('#back').onclick=()=>{saveDraft();selected=null;dirty=false;render()};if($('#review'))$('#review').onclick=()=>append({id:uuid(),record:selected,reviewOf:record(selected).id});if($('#retry'))$('#retry').onclick=send;if($('#pendingExport'))$('#pendingExport').onclick=()=>download('kist-unconfirmed.json',pending);if($('#refresh'))$('#refresh').onclick=async()=>{if(!confirm('Сначала скачай неподтверждённый ввод. Убрать его из этой вкладки и обновить журнал?'))return;try{const r=await fetch('/api/state',{cache:'no-store'}),j=await r.json();if(!r.ok)throw Error(j.error);accept(j);notice="";formError="";pending=null;conflict=false;localStorage.removeItem(key+'.pending');render()}catch(e){status(e.message)}}}
 async function append(e){if(!allowed())return;const next=copy(current.state);next.simpleJournal=next.simpleJournal||[];next.simpleJournal.push({...e,actor:me.login,recordedAt:now()});if(demo){const j={...current,state:next,revision:current.revision+1};if(!write(key+'.demo',j)){error('Не удалось сохранить в браузере. Ввод сохранён в форме.');return}current=j;clearDraft();selected=null;dirty=false;render();toast('Сохранено в демо');return}write(key+'.pendingDraft',draftKey());pending={database:current.database,revision:current.revision,command:uuid(),body:next};if(!write(key+'.pending',pending)){pending=null;error('Не удалось сохранить неподтверждённый ввод. Скопируй данные перед повтором.');return}await send()}
-async function save(ev){ev.preventDefault();formError='';notice='';if(!allowed())return;saveDraft();const d=formData();try{d.order=fullOrder(d.order);d.name=d.name.trim();d.qty=d.qty.trim()===''?null:Number(d.qty);if(d.qty!==null&&(!Number.isInteger(d.qty)||d.qty<0||d.qty>1000000000))throw Error('Количество, если указано, — целое число от 0 до 1000000000.');for(const k of ['start','end'])if(d[k]){const t=new Date(d[k]);if(Number.isNaN(t.getTime())||t>new Date)throw Error('Проверь дату и время: будущий факт сохранить нельзя.');d[k]=t.toISOString()}if(d.end&&!d.start)throw Error('Укажи начало обработки.');if(d.end&&new Date(d.end)<new Date(d.start))throw Error('Окончание раньше начала.');d.steel=d.steel.trim();d.final=d.final.trim();if(!!d.end!==!!d.final)throw Error('Для завершения укажи окончание и конечную твёрдость.');await append({id:uuid(),record:selected==='new'?uuid():selected,data:d})}catch(e){error(e.message)}}
-$('#screenBack').onclick=()=>{if(pending||busy){toast('Дождись подтверждения записи');return}if(selected!==null){$('#back')?.click();return}let internal=false;try{internal=new URL(document.referrer).origin===location.origin}catch{}if(internal&&history.length>1)history.back();else location.href=demo?'./eye.html':'/eye'};
-$('#add').onclick=()=>{formError='';selected='new';dirty=!!read(draftKey());render();$('#f-order')?.focus()};$('#main').onclick=e=>{if(e.target.closest('.regime')){saveDraft();window.open((demo?'./heat.html':'/heat')+'?steel='+encodeURIComponent($('#f-steel').value),'_blank','noopener');return}const steel=e.target.closest('[data-steel]');if(steel){selectSteel(steel.dataset.steel);return}const row=e.target.closest('[data-record]');if(row){formError='';selected=row.dataset.record;dirty=!!read(draftKey());render();return}const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;render()}const n=e.target.closest('[data-now]');if(n){const name=n.dataset.now;formTimes[name]=local(now());$('#f-'+name).value=formTimes[name];saveDraft();if($('#review'))$('#review').disabled=true}};
+async function save(ev){ev.preventDefault();formError='';notice='';if(!allowed())return;saveDraft();const d=formData();try{if(d.ticket!==undefined){
+ if(!/^\d{5}$/.test(d.ticket))throw Error('Наряд: пять цифр');
+ if(d.conformity&&(!d.end||!d.final.trim()))throw Error('Оценка возможна после окончания цикла');
+ if(!/^\d{0,2}$/.test(d.diameter)||!/^\d{0,3}$/.test(d.length))throw Error('Проверь размер изделия');
+ if(d.start&&!d.furnace)throw Error('Для начала выбери печь');
+ if(record(selected)?.data.ticket&&d.ticket!==record(selected).data.ticket)throw Error('Номер сохранённого наряда уже установлен');
+ d.name=productName(d)||'';
+}else{d.order=fullOrder(d.order);d.name=d.name.trim()}
+ d.medium=d.medium||'';d.qty=d.qty.trim()===''?null:Number(d.qty);if(d.qty!==null&&(!Number.isInteger(d.qty)||d.qty<0||d.qty>1000000000))throw Error('Количество, если указано, — целое число от 0 до 1000000000.');for(const k of ['start','end'])if(d[k]){const t=new Date(d[k]);if(Number.isNaN(t.getTime())||t>new Date)throw Error('Проверь дату и время: будущий факт сохранить нельзя.');d[k]=t.toISOString()}if(d.end&&!d.start)throw Error('Укажи начало обработки.');if(d.end&&new Date(d.end)<new Date(d.start))throw Error('Окончание раньше начала.');d.steel=d.steel.trim();d.final=d.final.trim();if(!!d.end!==!!d.final)throw Error('Для завершения укажи окончание и конечную твёрдость.');await append({id:uuid(),record:record(selected)?selected:uuid(),data:d})}catch(e){error(e.message)}}
+$('#screenBack').onclick=()=>{if(pending||busy){toast('Дождись подтверждения записи');return}if(showFurnaces){showFurnaces=false;render();return}if(selected!==null){$('#back')?.click();return}let internal=false;try{internal=new URL(document.referrer).origin===location.origin}catch{}if(internal&&history.length>1)history.back();else location.href=demo?'./eye.html':'/eye'};
+$('#furnaceView').onclick=()=>{showFurnaces=true;render();updateTemperatures()};
+$('#add').onclick=()=>{if(dirty)saveDraft();nextCycle=null;logCycleOpen('');formError='';selected='new';dirty=!!read(draftKey());render();$('#f-ticket')?.focus()};$('#main').onclick=e=>{const furnace=e.target.closest('[data-furnace]');if(furnace){openFurnaceHistory(furnace.dataset.furnace);return}if(e.target.closest('.regime')){saveDraft();window.open((demo?'./heat.html':'/heat')+'?steel='+encodeURIComponent($('#f-steel').value),'_blank','noopener');return}const steel=e.target.closest('[data-steel]');if(steel){selectSteel(steel.dataset.steel);return}const row=e.target.closest('[data-record]');if(row){if(pending||busy)return;if(dirty)saveDraft();showFurnaces=false;nextCycle=null;formError='';selected=row.dataset.record;dirty=!!read(draftKey());render();return}const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;render()}const n=e.target.closest('[data-now]');if(n){const name=n.dataset.now;formTimes[name]=now();$('#f-'+name).value=local(formTimes[name]);saveDraft();if($('#review'))$('#review').disabled=true}};
 const links=document.createElement('div');links.className='utility';links.innerHTML=(['admin','senior','thermist'].includes(me.role)?'<a href="'+(demo?'./heat.html':'/heat')+'">'+(['admin','senior'].includes(me.role)?'Корректировка базы терморежимов':'База терморежимов')+'</a>':'')+'<a href="'+(demo?'./eye.html':'/eye')+'">Суперглаз</a>'+(['admin','dispatcher','senior','thermist'].includes(me.role)?'<a href="'+(demo?'./dispatch.html':'/dispatch')+'">Заказы-наряды</a>':'')+((demo||me.role==='admin')?'<a href="'+(demo?'./admin.html':'/admin')+'">Администрирование</a>':'');document.querySelector('.bottom').prepend(links);
 const productionPaths={technologist:'technology',worker:'worker',saw:'saw',hr:'hr',qc:'qc',master:'master',qc_chief:'quality',production_chief:'production'};if(productionPaths[me.role])links.insertAdjacentHTML('afterbegin','<a href="'+(demo?'./'+productionPaths[me.role]+'.html':'/'+productionPaths[me.role])+'">Моё рабочее место</a>');
 $('#export').onclick=()=>download('kist-journal.json',{...current,user:{login:me.login,role:me.role}});$('#logout').onclick=async()=>{if(pending||dirty){toast('Сначала сохрани введённую запись');return}if(demo){if(confirm('Сбросить только это учебное демо?')){localStorage.removeItem(key+'.demo');location.reload()}return}try{const r=await fetch('/api/logout',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':me.csrf},body:'{}'});if(!r.ok)throw Error('Не удалось выйти');location.reload()}catch(e){status(e.message)}};
-window.addEventListener('beforeunload',e=>{if(pending||dirty){e.preventDefault();e.returnValue=''}});render();if(!demo)setInterval(async()=>{if(pending||busy||selected!==null||document.hidden)return;try{const r=await fetch('/api/state',{cache:'no-store'}),j=await r.json();if(!r.ok)throw Error(j.error);accept(j);render()}catch(e){status('Связь с сервером не подтверждена: '+e.message)}},5000);
+window.addEventListener('beforeunload',e=>{if(pending||dirty){e.preventDefault();e.returnValue=''}});render();if(!demo)setInterval(async()=>{if(pending||busy||selected!==null||document.hidden)return;if(showFurnaces)updateTemperatures();try{const r=await fetch('/api/state',{cache:'no-store'}),j=await r.json();if(!r.ok)throw Error(j.error);const changed=j.revision!==current.revision;accept(j);if(changed&&selected===null&&!pending&&!busy)render()}catch(e){status('Связь с сервером не подтверждена: '+e.message)}},5000);
 })();
 </script></body></html>
