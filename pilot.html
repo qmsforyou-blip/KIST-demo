@@ -62,6 +62,19 @@ input[type=number]{appearance:textfield;-moz-appearance:textfield}input[type=num
 #furnaceHistory label{display:grid;gap:4px}
 #furnaceHistory h2{margin:0}
 .furnaces th button{padding:0;white-space:nowrap}
+
+.action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.action-grid button{padding:8px 6px;line-height:1.2}
+.order-summary{display:grid;grid-template-columns:1.5em 7ch minmax(12ch,1fr) 11ch 11ch 11ch;gap:6px;min-width:385px;align-items:center;text-align:left;width:100%;padding:8px;color:inherit}
+.order-summary span{overflow:hidden;text-overflow:ellipsis}
+.order-heading{color:#a1a1a6;font-size:12px}
+.order-group{border-bottom:1px solid var(--line)}
+.order-open{color:#ff8ab3}.order-closed{color:#62d891}
+.charge-line{display:flex;align-items:stretch;min-width:390px}
+.charge-tablehead{padding-left:42px}.charge-line>button:first-child{min-width:36px;padding:5px}
+.charge-line .row{flex:1;min-width:0}
+.charge-history{padding-left:36px}
+.order-actions{padding:6px 8px}
 </style></head><body><header><button type="button" id="screenBack">← Назад</button><div class="eyebrow"><span class="logo" aria-label="ЗУМ, временный текстовый знак">ЗУМ</span><span id="screen">M05-19 · UI044</span></div><div class="topline"><div><h1 id="heading">Термист</h1><div class="who" id="who"></div></div><button id="furnaceView" type="button">Что в печах</button><button class="plus" id="add" aria-label="Добавить работу">+</button></div></header><main id="main"></main><div class="bottom"><p class="hint legend" id="legend">— Не начато · <span class="working">Т/О В работе</span> · <span class="done">твёрдость Завершено</span></p><div class="connection" id="connection" role="status" aria-live="polite"></div><div class="utility"><a id="advanced" href="/?view=advanced">Паспорта и садки</a><button id="logout">Выйти</button></div><details><summary>О журнале</summary><span id="demoInfo" hidden>Учебные записи сохраняются только в этом браузере. </span>Завершено — обработка записана, это не оценка соответствия и не разрешение на продукцию. Решение диспетчера и ОТК ведётся отдельно. Твёрдость вводится с единицей, если она известна. ЗУМ — временный текстовый знак до получения логотипа. <button id="export">Скачать историю</button></details></div><div id="toast" role="status" hidden></div><script>
 (()=>{'use strict';const boot={"advanced": false, "advancedHref": "./pilot-advanced.html", "demo": true, "database": "synthetic-ui029-v1", "revision": 0, "demoBacklink": "./index.html", "user": {"login": "Учебный термист", "role": "senior", "csrf": "not-a-real-session"}, "state": {"schema": 1, "boxes": [], "runs": [], "events": [], "paperQueue028": [{"id": "syn-q1", "order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 100, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "1", "ticket": "SYN-8001", "name": "Учебная деталь 1", "alloy": "40Х", "remaining": 100, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}, {"id": "syn-q2", "order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример", "basis": 30, "history": [{"recordedAt": "2026-10-16T06:00:00+00:00", "snapshot": {"order": "SYN-029", "position": "2", "ticket": "SYN-8002", "name": "Учебная деталь 2", "alloy": "40Х", "remaining": 30, "regime": "SYN-R1@1", "operation": "Нагрев", "planDate": "2026-10-16", "group": "I", "due": "", "enteredBy": "Учебный термист", "customer": "", "weight": "", "readyDate": "", "requirements": "Только синтетический пример"}}]}], "simpleJournal": [{"id": "syn-simple-1", "record": "syn-work-1", "actor": "Учебный термист", "recordedAt": "2026-10-29T06:00:00+00:00", "data": {"date": "2026-10-29", "order": "УЧ-001", "name": "Учебный болт М20×100", "qty": 100, "steel": "40Х", "initial": "", "start": "", "end": "", "final": ""}}]}, "furnaces": {"1": "К №1", "2": "К №2", "3": "К №3", "5": "К №5", "6": "Ш №1", "7": "Ш №2"}, "heatModes": ["Закалка", "Нормализация", "Отпуск", "Отжиг", "Старение"]};
 const steelGrades=["3СП4", "3СП5", "10", "20", "25", "30", "35", "40", "45", "09Г2С", "10Г2", "30Х", "35Х", "40Х", "40ХН", "15ХМ", "30ХМ", "35ХМ", "30ХМА", "38ХА", "25Х1МФ", "25Х2М1Ф", "20Х1М1Ф1ТР", "20Х1М1Ф1БР", "18Х12ВМБФР", "20ХН3А", "ХН35ВТ", "12ХН35ВТ", "08Х13", "12Х13", "20Х13", "30Х13", "14Х17Н2", "18Х2Н4МА", "07Х16Н6", "12Х18Н9Т", "08Х18Н10Т", "12Х18Н10Т", "AISI_321", "08Х22Н6Т", "08Х21Н6М2Т", "10Х17Н13М2Т", "10Х17Н13М3Т", "08Х17Н15М3Т", "31Х19Н9МВБТ", "06ХН28МДТ", "07Х21Г7АН5", "10Х14Г14Н4Т", "08Х15Н24В4ТР", "08Х14Н20В2ТР", "37Х12Н8Г8МФБ", "45Х14Н14В2М", "10Х11Н23Т3МР", "13Х11Н2В2МФ", "15Х5М", "12Х1МФ", "30ХГСА", "20Х23Н18", "08Х17Н15М2Т"];
@@ -71,7 +84,9 @@ const assessmentLabels={yes:'Твёрдость соответствует тр�
 const actorName=e=>boot.displayNames?.[e.actor]||e.actor;
 const temperatureLabels=new Map(), missingTimers=new Map();
 let showFurnaces=false, orderBy='chronology', period='month', dateFrom='', dateTo='';
-let nextCycle=null, comparison=null;
+let nextCycle=null, comparison=null, orderSearch='';
+const openOrders=new Set(), openCharges=new Set();
+let visibleOrderKeys=[];
 let current=copy(boot),selected=null,filter='all',busy=false,pending=null,conflict=false,dirty=false,notice="",formError="",formTimes={start:"",end:""};
 const read=k=>{try{return JSON.parse(localStorage.getItem(k))}catch{return null}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 if(demo){$('#demoInfo').hidden=false;const saved=read(key+'.demo');if(saved?.state)current=saved;$('#logout').textContent='Сбросить демо';$('#advanced').href=boot.advancedHref||'./pilot-advanced.html'}else pending=read(key+'.pending');
@@ -84,7 +99,7 @@ function accept(j){if(j.database!==boot.database)throw Error('База заме�
 function error(s){formError=s;const e=$('#error');if(e){e.textContent=s;e.focus()}else status(s)}
 async function send(){if(!pending||busy||conflict)return;busy=true;render();status('Сохраняем…');try{const r=await fetch('/api/state',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':me.csrf},body:JSON.stringify(pending)}),j=await r.json();if(!r.ok){if(r.status===409)conflict=true;const e=Error(j.error||'Ошибка сохранения');e.status=r.status;throw e}accept(j);notice="";formError="";const pendingRecord=pending.body?.simpleJournal?.at(-1)?.record;pending=null;if(comparison&&comparison.record===pendingRecord){localStorage.removeItem(key+'.conflict.'+comparison.record);comparison=null}localStorage.removeItem(key+'.pending');localStorage.removeItem(read(key+'.pendingDraft')||draftKey());localStorage.removeItem(key+'.pendingDraft');selected=null;dirty=false;toast('Сохранено')}catch(e){if([400,403,404,413,415,422].includes(e.status)){pending=null;localStorage.removeItem(key+'.pending')}status(e.message);error(e.message)}finally{busy=false;render()}}
 const draftKey=()=>key+'.draft.'+(selected||'new');function clearDraft(){localStorage.removeItem(draftKey())}function formData(){const f=$('#form');if(!f)return null;const data={conformity:'',...Object.fromEntries(new FormData(f))},prior=record(selected)?.data;
-if(data.ticket!==undefined){data.repeat=!!f.elements.repeat.checked;const source=prior||read(draftKey())||nextCycle;data.order=source?.order||'';data.name=source?.name||'';data.cycleOf=prior?.cycleOf||(selected?.startsWith('next:')?selected.slice(5):'');}
+if(data.ticket!==undefined){data.repeat=!!f.elements.repeat.checked;const source=prior||read(draftKey())||nextCycle;data.order=data.customerOrder??source?.order??'';delete data.customerOrder;data.name=source?.name||'';data.cycleOf=prior?.cycleOf||(selected?.startsWith('next:')?selected.slice(5):'');}
 return {...data,...formTimes}}
 function captureTimeEdit(ev){const name=ev.target?.name;if(name==='start'||name==='end')formTimes[name]=ev.target.value;saveDraft();if($('#review'))$('#review').disabled=true}
 function saveDraft(){if(!writer)return;const d=formData();if(d){dirty=true;write(draftKey(),d)}}
@@ -93,7 +108,7 @@ function conflictComparison(e){
   const localData=comparison.data;
   if(!localData)return '<p class="hint">Открыта актуальная версия. Проверь её перед новым подтверждением.</p>';
   const fields={date:'Дата',order:'Заказ',name:'Наименование',product:'Вид продукции',diameter:'Диаметр',length:'Длина',
-    qty:'Количество',steel:'Сталь',initial:'Начальная твёрдость',final:'Конечная твёрдость',hardnessScale:'Шкала',
+    orderTotal:'Всего по наряду',qty:'Количество',steel:'Сталь',initial:'Начальная твёрдость',final:'Конечная твёрдость',hardnessScale:'Шкала',
     furnace:'Печь',mode:'Режим',start:'Начало',end:'Окончание',medium:'Среда',actualMedium:'Фактическая среда',
     conformity:'Оценка',repeat:'Повторно'};
   const display=(k,v)=>v==null||v===''?'—':k==='start'||k==='end'?fmt(v):k==='furnace'?furnaces[v]||v:
@@ -145,25 +160,86 @@ function periodStart(){
   if(period==='week')date.setDate(date.getDate()-6);
   return local(date.toISOString()).slice(0,10);
 }
-function list(){
-  let rows=records();
-  if(filter==='review')rows=rows.filter(e=>stateOf(e.data)==='done'&&!reviewed(e));
-  if(period!=='all'){
-    const lower=period==='range'?dateFrom:periodStart(), upper=period==='range'?dateTo:today();
-    rows=rows.filter(e=>{const date=e.data.date||local(e.recordedAt).slice(0,10);return (!lower||date>=lower)&&(!upper||date<=upper)});
+function orderKey(event, byRecord){
+  const data=(byRecord.get(event.data.cycleOf)||event).data;
+  return data.ticket?'ticket:'+data.ticket:data.order.trim()?'order:'+data.order.trim().replace(/\s+/g,' ').toUpperCase():'record:'+event.record;
+}
+function journalOrders(){
+  const latest=records(),byRecord=new Map(latest.map(e=>[e.record,e])),groups=new Map(),started=new Map(),decisions=new Map();
+  for(const event of entries()){
+    if(event.data&&!started.has(event.record))started.set(event.record,started.size);
+    if(event.orderDecision)decisions.set(event.record,event);
   }
-  const sortValue=e=>orderBy==='actor'?(boot.displayNames?.[e.actor]||e.actor):orderBy==='steel'?e.data.steel:orderBy==='repeat'?Number(e.data.repeat===true):'';
+  for(const e of latest.sort((a,b)=>started.get(a.record)-started.get(b.record))){
+    const key=orderKey(e,byRecord),root=e.data.cycleOf||e.record;
+    if(!groups.has(key))groups.set(key,{key,charges:new Map(),events:[],total:null});
+    const group=groups.get(key);
+    if(!group.charges.has(root))group.charges.set(root,[]);
+    group.charges.get(root).push(e);
+    group.events.push(e);
+    if(e.data.orderTotal!=null)group.total=e.data.orderTotal;
+    group.decision=decisions.get(key);group.closed=group.decision?.orderDecision==='close';
+  }
+  return [...groups.values()];
+}
+function list(){
+  const groups=journalOrders();
+  const inPeriod=e=>{
+    if(period==='all')return true;
+    const lower=period==='range'?dateFrom:periodStart(),upper=period==='range'?dateTo:today();
+    const date=e.data.date||local(e.recordedAt).slice(0,10);
+    return (!lower||date>=lower)&&(!upper||date<=upper);
+  };
+  const needsReview=e=>stateOf(e.data)==='done'&&!reviewed(e);
+  const matches=e=>inPeriod(e)&&(filter!=='review'||needsReview(e));
+  const ticket=e=>e.data.ticket||e.data.order||'—';
   const when=e=>e.data.start||e.data.date||e.recordedAt;
-  rows.sort((a,b)=>String(sortValue(a)).localeCompare(String(sortValue(b)),'ru')*(orderBy==='repeat'?-1:1)
-    ||when(b).localeCompare(when(a))||b.recordedAt.localeCompare(a.recordedAt));
+  const sortValue=e=>orderBy==='ticket'?ticket(e):orderBy==='actor'?actorName(e):orderBy==='steel'?e.data.steel:orderBy==='repeat'?Number(e.data.repeat===true):'';
+  const compare=(a,b)=>String(sortValue(a)).localeCompare(String(sortValue(b)),'ru',{numeric:true})*(orderBy==='repeat'?-1:1)
+    ||when(b).localeCompare(when(a))||b.recordedAt.localeCompare(a.recordedAt);
+  const search=orderSearch.trim().toUpperCase();
+  const visible=groups.filter(g=>g.events.some(matches)&&(!search||g.events.some(e=>[e.data.order,e.data.ticket,boot.orderNumbers?.[e.data.ticket]].some(n=>n?.toUpperCase().includes(search)))));
+  const representative=g=>g.events.filter(matches).sort(compare)[0];
+  visible.sort((a,b)=>compare(representative(a),representative(b)));
+  const allOpen=visible.length>0&&visible.every(g=>openOrders.has(g.key));
   const dropdown=(id,label,options,chosen)=>'<label>'+label+' <select id="'+id+'">'+options.map(([key,title])=>'<option value="'+key+'" '+(key===chosen?'selected':'')+'>'+title+'</option>').join('')+'</select></label>';
-  const controls='<div class="journal-tools">'+dropdown('orderBy','Упорядочить',[['chronology','Хронология'],['actor','Фамилия'],['steel','Сталь'],['repeat','Повторно']],orderBy)+dropdown('period','Диапазон',[['month','Месяц'],['week','Неделя'],['all','Весь период'],['range','Выбрать']],period)+(period==='range'?'<label>С <input id="dateFrom" type="date" value="'+esc(dateFrom)+'"></label><label>По <input id="dateTo" type="date" value="'+esc(dateTo)+'"></label>':'')+'</div>';
-  const reviews=me.role==='senior'?'<div class="segment"><button data-filter="all" class="'+(filter==='all'?'active':'')+'">Все работы</button><button data-filter="review" class="'+(filter==='review'?'active':'')+'">Проверить · '+records().filter(e=>stateOf(e.data)==='done'&&!reviewed(e)).length+'</button></div>':'';
+  const controls='<div class="journal-tools">'+dropdown('orderBy','Упорядочить',[['chronology','Хронология'],['actor','Фамилия'],['steel','Сталь'],['repeat','Повторно'],['ticket','По наряд-заданию']],orderBy)+dropdown('period','Диапазон',[['month','Месяц'],['week','Неделя'],['all','Весь период'],['range','Выбрать']],period)+(period==='range'?'<label>С <input id="dateFrom" type="date" value="'+esc(dateFrom)+'"></label><label>По <input id="dateTo" type="date" value="'+esc(dateTo)+'"></label>':'')+'</div>'+
+    '<div class="action-grid"><button id="toggleOrders" type="button">'+(allOpen?'Свернуть':'Развернуть')+'</button><button id="searchOrder" type="button">Поиск № Заказа</button></div>'+
+    (search?'<div class="hint">Поиск · '+esc(orderSearch)+' <button id="clearOrderSearch" type="button">Сбросить поиск</button></div>':'');
+  const reviews=me.role==='senior'?'<div class="segment"><button data-filter="all" class="'+(filter==='all'?'active':'')+'">Все работы</button><button data-filter="review" class="'+(filter==='review'?'active':'')+'">Проверить · '+records().filter(needsReview).length+'</button></div>':'';
   const cells=(value,length,cls='',checked=false)=>'<span class="'+cls+'" title="'+esc(value)+'">'+esc(String(value).slice(0,length))+(checked?'<span class="reviewmark"> ✓</span>':'')+'</span>';
-  return controls+reviews+recovery()+'<div class="journal-grid"><div class="tablehead"><span>Наряд</span><span>Фамилия</span><span>Изделие</span><span>Сталь</span><span>Шт.</span><span>Статус</span><span></span></div><div class="group">'+(rows.map(e=>{
-    const d=e.data, state=stateOf(d), title=state==='done'?d.final:state==='working'?(d.mode||(d.ticket?'—':'Т/О')):(d.mode||'—');
-    return '<button class="row" data-record="'+esc(e.record)+'">'+cells(d.ticket||d.order||'—',d.ticket?5:100,'order')+cells(actorName(e),5)+cells(productName(d)||'—',15,'name')+cells(d.steel||'—',5)+cells(d.qty??'—',2)+cells(title,state==='done'&&d.ticket?5:30,'state '+state+(d.conformity==='no'?' nonconforming':''),reviewed(e))+cells(d.repeat?'п':'',1,'repeat')+'</button>';
-  }).join('')||'<div class="empty">Нет записей за выбранный период</div>')+'</div></div>';
+  const header='<div class="tablehead charge-tablehead"><span>Наряд</span><span>Фамилия</span><span>Изделие</span><span>Сталь</span><span>Шт.</span><span>Статус</span><span></span></div>';
+  const row=(e,count,charge)=> {
+    const d=e.data,state=stateOf(d),title=state==='done'?d.final:state==='working'?(d.mode||(d.ticket?'—':'Т/О')):(d.mode||'—');
+    return '<button class="row" data-record="'+esc(e.record)+'">'+cells(ticket(e),100,'order')+cells(actorName(e),5)+cells((charge?charge+' · ':'')+(productName(d)||'—'),charge?100:15,'name')+cells(d.steel||'—',5)+cells(count,100)+cells(title,state==='done'&&d.ticket?5:30,'state '+state+(d.conformity==='no'?' nonconforming':''),reviewed(e))+cells(d.repeat?'п':'',1,'repeat')+'</button>';
+  };
+  const rows=visible.map(g=>{
+    const charges=[...g.charges.entries()],opened=openOrders.has(g.key);
+    const starts=g.events.map(e=>e.data.start).filter(Boolean).sort((a,b)=>Date.parse(a)-Date.parse(b));
+    const ends=g.events.map(e=>e.data.end).filter(Boolean).sort((a,b)=>Date.parse(a)-Date.parse(b));
+    const approved=e=>reviewed(e)&&e.data.conformity==='yes'?(e.data.qty||0):0;
+    const confirmed=charges.reduce((n,[,cycles])=>n+approved(cycles.at(-1)),0);
+    const first=g.events[0], canClose=g.total!==null&&confirmed===g.total&&charges.every(([,cycles])=>approved(cycles.at(-1))===cycles[0].data.qty&&approved(cycles.at(-1))>0);
+    const summary='<button class="order-summary" aria-expanded="'+opened+'" data-order-toggle="'+esc(g.key)+'"><span>'+(opened?'▾':'▸')+'</span>'+cells(g.events.find(e=>e.data.ticket)?.data.ticket||ticket(first),100)+cells(productName(first.data)||'—',100)+cells(starts.length?fmt(starts[0]).split(',')[0]:'—',100)+cells(ends.length?fmt(ends.at(-1)).split(',')[0]:'—',100)+cells(confirmed+' / '+(g.total??'—'),100,g.closed?'order-closed':'order-open')+'</button>';
+    const sortedCharges=charges.map(([root,cycles],i)=>({root,cycles,i,latest:cycles.at(-1)}))
+      .filter(c=>c.cycles.some(matches)).sort((a,b)=>compare(a.latest,b.latest));
+    const details=sortedCharges.map(({root,cycles,i,latest})=>{
+      if(filter==='review'&&!matches(latest))latest=cycles.filter(matches).at(-1);
+      const expanded=openCharges.has(root)||filter==='review';
+      const denominator=cycles[0].data.qty??'—';
+      const label='Садка '+(i+1);
+      return '<div class="charge-line"><button type="button" aria-label="Циклы '+label+'" aria-expanded="'+expanded+'" data-charge-toggle="'+esc(root)+'">'+(expanded?'▾':'▸')+'</button>'+
+        row(latest,approved(latest)+' / '+denominator,label)+'</div>'+
+        (expanded?'<div class="charge-history">'+cycles.filter(e=>e.record!==latest.record).map(e=>row(e,approved(e)+' / '+(e.data.qty??'—'),'')).join('')+'</div>':'');
+    }).join('');
+    const base=first;
+    const more=writer&&(base.data.ticket||base.data.order)&&!g.closed?'<button data-new-charge="'+esc(base.record)+'" type="button">+ Новая садка</button>':'';
+    const decision=me.role==='senior'&&(g.closed||canClose)?'<button type="button" data-order-decision="'+esc(g.key)+'" data-decision="'+(g.closed?'reopen':'close')+'">'+(g.closed?'Открыть наряд':'Закрыть наряд')+'</button>':'';
+    const decided=g.decision?'<p class="hint">'+(g.closed?'Наряд закрыт':'Наряд открыт повторно')+' · '+esc(actorName(g.decision))+' · '+esc(fmt(g.decision.recordedAt))+'</p>':'';
+    return '<div class="order-group">'+summary+(opened?header+details+'<div class="action-grid order-actions">'+more+decision+'</div>'+decided:'')+'</div>';
+  }).join('');
+  visibleOrderKeys=visible.map(g=>g.key);
+  return controls+reviews+recovery()+'<div class="journal-grid"><div class="order-summary order-heading"><span></span><span>Наряд</span><span>Наименование</span><span>Дата Н.</span><span>Дата К.</span><span>Кол.</span></div><div class="group">'+(rows||'<div class="empty">Нет записей за выбранный период</div>')+'</div></div>';
 }
 function family(e){
   if(!e)return [];
@@ -176,8 +252,9 @@ function cycleList(e){
     related.filter(x=>x.record!==e?.record&&stateOf(x.data)!=='done').map(x=>'<button type="button" data-record="'+esc(x.record)+'">'+esc(x.data.mode||'Операция')+(x.data.repeat?' · п':'')+' · '+(x.data.start?'В работе':'Не начато')+'</button>').join('')+'</div>';
 }
 function cycleFields(d,e){
-  if((e||d.order)&&d.ticket===undefined)return field('order','Заказ',orderNumber(d.order))+field('name','Наименование',d.name);
+  if((e||d.order||selected?.startsWith('charge:'))&&d.ticket===undefined)return field('order','Заказ',orderNumber(d.order))+field('name','Наименование',d.name);
   return field('ticket','Наряд',d.ticket||'')+(!d.product&&d.name?'<p class="hint">'+esc(d.name)+'</p>':'')+
+    field('customerOrder','№ Заказа',d.order||'')+
     selectField('product','Вид продукции',[['','Выбери'],...['Болт','Шпилька','Гайка'].map(x=>[x,x])],d.product)+
     field('diameter','Диаметр / резьба',d.diameter||'')+field('length','Длина',d.length||'')+
     '<label><input name="repeat" type="checkbox" '+(d.repeat?'checked':'')+' '+(!writer?'disabled':'')+'> Повторно · незапланированный цикл</label>';
@@ -387,38 +464,55 @@ async function viewChart(){
     target.innerHTML=result.status==='ok'?temperatureChart(result.points,result.start,result.end):'<p>'+esc(telemetryMessage(result.status))+'</p>';
   }catch(e){target.textContent=e.message}
 }
-function orderPrefix(){const e=record(selected);return e&&e.data.order&&!/^З\s*[-–—]/i.test(e.data.order)?'':'З-'}
+function orderPrefix(){const value=record(selected)?.data.order||nextCycle?.order;return value&&!/^З\s*[-–—]/i.test(value)?'':'З-'}
 function orderNumber(v){return orderPrefix()?String(v??'').replace(/^З\s*[-–—]\s*/i,''):v}
 function fullOrder(v){const n=String(v??'').trim();const suffix=n.replace(/^(?:З\s*[-–—]\s*)+/i,'');return orderPrefix()?(suffix?'З-'+suffix:''):n}
-function mediumField(v){return '<div class="field"><label for="f-medium">Среда</label><select id="f-medium" name="medium" '+(!writer?'disabled':'')+'>'+[['','Выбери'],['Масло','Масло'],['Вода','Вода']].map(([value,title])=>'<option value="'+value+'" '+(v===value?'selected':'')+'>'+title+'</option>').join('')+'</select></div>'}
+function mediumField(v){return '<div class="field"><label for="f-medium">Среда</label><select id="f-medium" name="medium" '+(!writer?'disabled':'')+'>'+[['','Выбери'],['Масло','Масло'],['Вода','Вода'],['Воздух','Воздух'],['Печь','Печь']].map(([value,title])=>'<option value="'+value+'" '+(v===value?'selected':'')+'>'+title+'</option>').join('')+'</select></div>'}
 function steelField(v){return '<div class="field steel-field"><label for="f-steel">Сталь</label><div class="steel-control"><input id="f-steel" name="steel" type="text" value="'+esc(v)+'" maxlength="500" autocomplete="off" autocapitalize="characters" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="steel-options" '+(!writer?'disabled':'')+'><div id="steel-options" role="listbox" aria-label="Марки стали" hidden></div></div></div>'}
 let steelIndex=-1;
 function closeSteels(){const input=$('#f-steel'),list=$('#steel-options');if(list)list.hidden=true;if(input){input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant')}steelIndex=-1}
 function suggestSteels(){const input=$('#f-steel'),list=$('#steel-options');if(!input||!writer)return;const prefix=input.value.trim().toLocaleUpperCase('ru-RU');const matches=prefix?steelGrades.filter(x=>x.toLocaleUpperCase('ru-RU').startsWith(prefix)):[];list.innerHTML=matches.map((x,i)=>'<button type="button" role="option" id="steel-option-'+i+'" aria-selected="false" data-steel="'+esc(x)+'">'+esc(x)+'</button>').join('');list.hidden=!matches.length;input.setAttribute('aria-expanded',String(!!matches.length));input.removeAttribute('aria-activedescendant');steelIndex=-1}
 function selectSteel(value){$('#f-steel').value=value;saveDraft();if($('#review'))$('#review').disabled=true;$('#f-steel').focus();closeSteels();showRecommendation()}
 function bindSteel(){const input=$('#f-steel');if(!input||!writer)return;input.oninput=suggestSteels;input.onfocus=suggestSteels;input.onkeydown=ev=>{const options=[...document.querySelectorAll('[data-steel]')];if(ev.key==='Escape'){closeSteels();return}if(['ArrowDown','ArrowUp'].includes(ev.key)&&options.length){ev.preventDefault();steelIndex=(steelIndex+(ev.key==='ArrowDown'?1:-1)+options.length)%options.length;options.forEach((x,i)=>x.setAttribute('aria-selected',String(i===steelIndex)));input.setAttribute('aria-activedescendant',options[steelIndex].id);options[steelIndex].scrollIntoView?.({block:'nearest'})}if(ev.key==='Enter'&&steelIndex>=0&&!$('#steel-options').hidden){ev.preventDefault();selectSteel(options[steelIndex].dataset.steel)}};input.onblur=()=>setTimeout(()=>{if(!document.activeElement?.closest('.steel-control'))closeSteels()},150)}
-function field(n,label,v,type='text',required=false){const fixedTicket=n==='ticket'&&(record(selected)?.data.ticket||(selected?.startsWith('next:')&&family(record(selected.slice(5))).some(x=>x.data.ticket)));const width={ticket:5,diameter:2,length:3}[n];return `<div class="field"><label for="f-${n}">${label}</label>${n==='order'?'<span class="order-prefix" aria-hidden="true">'+esc(orderPrefix())+'</span>':''}<input id="f-${n}" name="${n}" type="${type}" value="${esc(v)}" ${required?'required':''} ${n==='qty'?'min="0" max="1000000000" step="1" inputmode="numeric"':''} ${type==='text'?'maxlength="'+(width||500)+'"':''} ${width?'inputmode="numeric"':''} ${type==='datetime-local'?'autocomplete="off"':''} ${!writer?'disabled':fixedTicket?'readonly':''}></div>`}
+function field(n,label,v,type='text',required=false){const fixedTicket=(n==='order'&&selected?.startsWith('charge:')&&nextCycle?.ticket===undefined)||n==='ticket'&&(record(selected)?.data.ticket||selected?.startsWith('charge:')||(selected?.startsWith('next:')&&family(record(selected.slice(5))).some(x=>x.data.ticket)));const width={ticket:5,diameter:2,length:3}[n];return `<div class="field"><label for="f-${n}">${label}</label>${n==='order'?'<span class="order-prefix" aria-hidden="true">'+esc(orderPrefix())+'</span>':''}<input id="f-${n}" name="${n}" type="${type}" value="${esc(v)}" ${required?'required':''} ${['qty','orderTotal'].includes(n)?'min="0" max="1000000000" step="1" inputmode="numeric"':''} ${type==='text'?'maxlength="'+(width||500)+'"':''} ${width?'inputmode="numeric"':''} ${type==='datetime-local'?'autocomplete="off"':''} ${!writer?'disabled':fixedTicket?'readonly':''}></div>`}
 function operationData(e){
   const draft=read(draftKey());
-  if(nextCycle&&selected?.startsWith('next:')){
-    return {...nextCycle,...draft,cycleOf:nextCycle.cycleOf,ticket:nextCycle.ticket||draft?.ticket||''};
+  if(nextCycle&&(selected?.startsWith('next:')||selected?.startsWith('charge:'))){
+    return {...nextCycle,...draft,cycleOf:nextCycle.cycleOf,ticket:nextCycle.ticket||(selected.startsWith('next:')?draft?.ticket||'':undefined)};
   }
   return draft||e?.data||{...empty(),hardnessScale:'HB'};
 }
-function detail(){const e=record(selected),d=operationData(e);formTimes={start:d.start||'',end:d.end||''};const v={...d,start:d.start?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.start||'')?local(d.start):d.start,end:d.end?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.end||'')?local(d.end):d.end};return `<div class="backbar"><button id="back">‹ Работы</button><span class="hint">${e?esc(e.data.date):d.cycleOf?'Следующий цикл · '+esc(d.ticket||d.order):'Новая операция'}</span></div>${recovery()}${conflictComparison(e)}${e?'<p class="hint">'+esc(productName(v)||'')+'</p>':''}${cycleList(e||record(d.cycleOf))}<h2>Операция</h2>${writer&&e?'<button type="button" id="nextCycle" '+(allowed()?'':'disabled')+'>+ Следующий цикл по наряду</button>':''}<form id="form" novalidate><div class="card">${field('date','Дата',v.date,'date')}${cycleFields(v,e)}${field('qty','Количество, шт.',v.qty,'number')}${steelField(v.steel)}${selectField('mode','Режим',[['','Выбери'],...modes.map(x=>[x,x])],v.mode)}
+function detail(){
+const e=record(selected),d=operationData(e);
+const root=d.cycleOf&&record(d.cycleOf);
+const group=journalOrders().find(g=>g.events.some(x=>x.record===(e||root)?.record)||selected==='charge:'+g.key);
+const closed=group?.closed;
+const quantityHint=root?'<p class="hint">В садке '+esc(root.data.qty??'—')+' шт.</p>':
+  group?.total!=null?'<p class="hint">Распределено по садкам '+esc([...group.charges.values()].reduce((n,c)=>n+(c[0].data.qty||0),0))+' / '+esc(group.total)+' шт.</p>':'';
+formTimes={start:d.start||'',end:d.end||''};const v={...d,start:d.start?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.start||'')?local(d.start):d.start,end:d.end?.includes('Z')||/[+-]\d\d:\d\d$/.test(d.end||'')?local(d.end):d.end};return `<div class="backbar"><button id="back">‹ Работы</button><span class="hint">${e?esc(e.data.date):d.cycleOf?'Следующий цикл · '+esc(d.ticket||d.order):'Новая операция'}</span></div>${recovery()}${conflictComparison(e)}${closed?'<p class="hint">Наряд закрыт. Чтобы исправить запись, сначала открой наряд в списке.</p>':''}${e?'<p class="hint">'+esc(productName(v)||'')+'</p>':''}${cycleList(e||record(d.cycleOf))}<h2>Операция</h2><div class="action-grid">${writer&&e&&!closed?'<button type="button" id="nextCycle" '+(allowed()?'':'disabled')+'>+ Следующий цикл по наряду</button>':''}</div><form id="form" novalidate><div class="card">${field('date','Дата',v.date,'date')}${cycleFields(v,e)}${quantityHint}${field('qty',v.cycleOf?'Количество в цикле, шт.':'Количество в садке, шт.',v.qty,'number')}${!v.cycleOf?field('orderTotal','Всего по наряду, шт.',v.orderTotal,'number'):''}${steelField(v.steel)}${selectField('mode','Режим',[['','Выбери'],...modes.map(x=>[x,x])],v.mode)}
 ${mediumField(v.medium||'')}${selectField('furnace','Печь №',[['','Печь не указана'],...Object.entries(furnaces)],v.furnace)}
-<p id="recommendedMedium" class="hint" aria-live="polite"></p>${field('actualMedium','Фактическая среда (если изменена)',v.actualMedium||'')}<button class="regime" type="button" aria-label="Открыть каталог режимов">Каталог режимов</button>${referenceFields(v)}${field('initial','Твёрдость начальная',v.initial)}</div><div class="card">${field('start','Начало',v.start,'datetime-local')}${writer?'<button class="now" type="button" data-now="start">Начало — сейчас</button>':''}${field('end','Окончание',v.end,'datetime-local')}${writer?'<button class="now" type="button" data-now="end">Окончание — сейчас</button>':''}${field('final','Твёрдость конечная',v.final)}
+<p id="recommendedMedium" class="hint" aria-live="polite"></p>${field('actualMedium','Фактическая среда (если изменена)',v.actualMedium||'')}<button class="regime" type="button" aria-label="Открыть каталог режимов">Каталог режимов</button>${referenceFields(v)}${field('initial','Твёрдость начальная',v.initial)}</div><div class="card">${field('start','Начало',v.start,'datetime-local')}${field('end','Окончание',v.end,'datetime-local')}${writer?'<div class="action-grid"><button class="now" type="button" data-now="start">Начало — сейчас</button><button class="now" type="button" data-now="end">Окончание — сейчас</button></div>':''}${field('final','Твёрдость конечная',v.final)}
 </div><div class="card"><h2>Оценка соответствия</h2>
 ${assessmentField(v.conformity)}
 <button type="button" id="viewChart">Просмотр терморежима</button><div id="temperatureChart"></div>
 ${boot.heatInstructionUrl?'<a href="'+esc(boot.heatInstructionUrl)+'">Технологическая инструкция</a>':'<p class="hint">Ссылка на действующую ТИ пока не настроена</p>'}
-</div><div class="error" id="error" role="alert" tabindex="-1">${esc(formError)}</div>${writer?`<button class="primary" id="save" ${allowed()?'':'disabled'}>Сохранить</button>`:''}<p class="hint">Очередь можно заполнить заранее: неизвестное оставь пустым. Например, твёрдость: 35 HRC. «Сейчас» подставляет время — запись появится после сохранения.</p></form>${me.role==='admin'&&e?'<button type="button" id="voidOperation" '+(pending||busy?'disabled':'')+'>Аннулировать запись</button>':''}${me.role==='senior'&&e&&stateOf(e.data)==='done'?`<button class="primary reviewbutton" id="review" ${allowed()&&!reviewed(e)&&!dirty?'':'disabled'}>${reviewed(e)?'Запись проверена ✓':'Проверить запись'}</button><p class="hint">Проверка записи старшим не разрешает выпуск продукции.</p>`:''}${e?`<details><summary>История записи · ${entries().filter(x=>x.record===selected).length}</summary><div class="history">${entries().filter(x=>x.record===selected).map(x=>`<p><b>${x.reviewOf?'Проверка старшим':'Сохранение записи'}</b><br>${esc(x.actor)} · ${esc(fmt(x.recordedAt))}${x.data?'<br>'+esc((x.data.ticket||x.data.order)+' · '+productName(x.data)+' · '+(x.data.qty??'—')+' шт. · '+x.data.steel)+'<br>Печь: '+esc(furnaces[x.data.furnace]||'не указана')+' · '+esc(x.data.mode||'—')+'<br>Среда: '+esc(x.data.actualMedium||x.data.medium||'—')+'<br>Начальная: '+esc(x.data.initial||'—')+' · конечная: '+esc(x.data.final||'—')+'<br>Начало: '+esc(x.data.start?fmt(x.data.start):'—')+'<br>Окончание: '+esc(x.data.end?fmt(x.data.end):'—'):''}</p>`).join('')}</div></details>`:''}`}
+</div><div class="error" id="error" role="alert" tabindex="-1">${esc(formError)}</div>${writer&&!closed?`<button class="primary" id="save" ${allowed()?'':'disabled'}>Сохранить</button>`:''}<p class="hint">Очередь можно заполнить заранее: неизвестное оставь пустым. Например, твёрдость: 35 HRC. «Сейчас» подставляет время — запись появится после сохранения.</p></form>${me.role==='admin'&&e&&!closed?'<button type="button" id="voidOperation" '+(pending||busy?'disabled':'')+'>Аннулировать запись</button>':''}${me.role==='senior'&&e&&!closed&&stateOf(e.data)==='done'?`<button class="primary reviewbutton" id="review" ${allowed()&&!reviewed(e)&&!dirty?'':'disabled'}>${reviewed(e)?'Запись проверена ✓':'Проверить запись'}</button><p class="hint">Проверка записи старшим не разрешает выпуск продукции.</p>`:''}${e?`<details><summary>История записи · ${entries().filter(x=>x.record===selected).length}</summary><div class="history">${entries().filter(x=>x.record===selected).map(x=>`<p><b>${x.reviewOf?'Проверка старшим':'Сохранение записи'}</b><br>${esc(x.actor)} · ${esc(fmt(x.recordedAt))}${x.data?'<br>'+esc((x.data.ticket||x.data.order)+' · '+productName(x.data)+' · '+(x.data.qty??'—')+' шт. · '+x.data.steel)+'<br>Печь: '+esc(furnaces[x.data.furnace]||'не указана')+' · '+esc(x.data.mode||'—')+'<br>Среда: '+esc(x.data.actualMedium||x.data.medium||'—')+'<br>Начальная: '+esc(x.data.initial||'—')+' · конечная: '+esc(x.data.final||'—')+'<br>Начало: '+esc(x.data.start?fmt(x.data.start):'—')+'<br>Окончание: '+esc(x.data.end?fmt(x.data.end):'—'):''}</p>`).join('')}</div></details>`:''}`}
 function render(){const isDetail=selected!==null;$('#furnaceView').hidden=isDetail||showFurnaces;$('#screen').textContent=(showFurnaces?'Что в печах':isDetail?'M05-20':'M05-19')+' · UI044';$('#heading').textContent=showFurnaces?'Что в печах':isDetail?'Операции':me.role==='senior'?'Старший термист':me.role==='dispatcher'?'Диспетчер':'Термист';$('#who').textContent=demo?'':me.login;$('#who').hidden=demo;$('#legend').hidden=isDetail||showFurnaces;$('#add').hidden=isDetail||showFurnaces||!writer;$('#add').disabled=!allowed();$('#main').innerHTML=showFurnaces?furnaceScreen():isDetail?detail():list();status();
 for(const [id,assign] of [['orderBy',v=>orderBy=v],['period',v=>period=v],['dateFrom',v=>dateFrom=v],['dateTo',v=>dateTo=v]]){
   const field=$('#'+id);
   if(field)field.onchange=()=>{assign(field.value);render()};
 }
 if($('#viewChart'))$('#viewChart').onclick=viewChart;
+if($('#toggleOrders'))$('#toggleOrders').onclick=()=>{
+  const all=visibleOrderKeys.length>0&&visibleOrderKeys.every(k=>openOrders.has(k));
+  for(const key of visibleOrderKeys)if(all)openOrders.delete(key);else openOrders.add(key);
+  render();
+};
+if($('#searchOrder'))$('#searchOrder').onclick=()=>{
+  const value=prompt('Поиск № Заказа или наряда',orderSearch);
+  if(value!==null){orderSearch=value;render()}
+};
+if($('#clearOrderSearch'))$('#clearOrderSearch').onclick=()=>{orderSearch='';render()};
 if($('#nextCycle'))$('#nextCycle').onclick=()=>{if(!allowed())return;if(dirty)saveDraft();formError='';const e=record(selected),d=e.data;logCycleOpen(e.record);nextCycle={...empty(),cycleOf:d.cycleOf||e.record,ticket:d.ticket||family(e).find(x=>x.data.ticket)?.data.ticket||'',order:d.order,name:d.name,product:d.product,
   diameter:d.diameter,length:d.length,qty:d.qty,steel:d.steel,initial:d.end?d.final:d.initial,
   hardnessScale:d.hardnessScale??(d.end?'':'HB')};selected='next:'+nextCycle.cycleOf;dirty=!!read(draftKey());render()};
@@ -431,18 +525,43 @@ if($('#voidOperation'))$('#voidOperation').onclick=()=>{
 };
 }
 async function append(e){if(!allowed()&&!(me.role==='admin'&&e.voidReason&&!busy&&!pending))return;const next=copy(current.state);next.simpleJournal=next.simpleJournal||[];next.simpleJournal.push({...e,actor:me.login,recordedAt:now()});if(demo){const j={...current,state:next,revision:current.revision+1};if(!write(key+'.demo',j)){error('Не удалось сохранить в браузере. Ввод сохранён в форме.');return}current=j;clearDraft();selected=null;dirty=false;render();toast('Сохранено в демо');return}write(key+'.pendingDraft',draftKey());pending={database:current.database,revision:current.revision,command:uuid(),body:next};if(!write(key+'.pending',pending)){pending=null;error('Не удалось сохранить неподтверждённый ввод. Скопируй данные перед повтором.');return}await send()}
-async function save(ev){ev.preventDefault();formError='';notice='';if(!allowed())return;saveDraft();const d=formData();try{if(d.ticket!==undefined){
+async function save(ev){ev.preventDefault();formError='';notice='';if(!allowed()||!$('#save'))return;saveDraft();const d=formData();try{if(d.ticket!==undefined){
  if(!/^\d{5}$/.test(d.ticket))throw Error('Наряд: пять цифр');
  if(d.conformity&&(!d.end||!d.final.trim()))throw Error('Оценка возможна после окончания цикла');
  if(!/^\d{0,2}$/.test(d.diameter)||!/^\d{0,3}$/.test(d.length))throw Error('Проверь размер изделия');
  if(d.start&&!d.furnace)throw Error('Для начала выбери печь');
  if(record(selected)?.data.ticket&&d.ticket!==record(selected).data.ticket)throw Error('Номер сохранённого наряда уже установлен');
  d.name=productName(d)||'';
+ d.order=d.order.trim();
 }else{d.order=fullOrder(d.order);d.name=d.name.trim()}
+ if('orderTotal' in d){
+   d.orderTotal=d.orderTotal.trim()===''?null:Number(d.orderTotal);
+   if(d.orderTotal!==null&&(!Number.isInteger(d.orderTotal)||d.orderTotal<1||d.orderTotal>1000000000))throw Error('Всего по наряду: укажи целое положительное число');
+ }
  d.medium=d.medium||'';d.qty=d.qty.trim()===''?null:Number(d.qty);if(d.qty!==null&&(!Number.isInteger(d.qty)||d.qty<0||d.qty>1000000000))throw Error('Количество, если указано, — целое число от 0 до 1000000000.');for(const k of ['start','end'])if(d[k]){const t=new Date(d[k]);if(Number.isNaN(t.getTime())||t>new Date)throw Error('Проверь дату и время: будущий факт сохранить нельзя.');d[k]=t.toISOString()}if(d.end&&!d.start)throw Error('Укажи начало обработки.');if(d.end&&new Date(d.end)<new Date(d.start))throw Error('Окончание раньше начала.');d.steel=d.steel.trim();d.final=d.final.trim();if(!!d.end!==!!d.final)throw Error('Для завершения укажи окончание и конечную твёрдость.');await append({id:uuid(),record:record(selected)?selected:uuid(),data:d})}catch(e){error(e.message)}}
 $('#screenBack').onclick=()=>{if(pending||busy){toast('Дождись подтверждения записи');return}if(showFurnaces){showFurnaces=false;render();return}if(selected!==null){$('#back')?.click();return}let internal=false;try{internal=new URL(document.referrer).origin===location.origin}catch{}if(internal&&history.length>1)history.back();else location.href=demo?'./eye.html':'/eye'};
 $('#furnaceView').onclick=()=>{showFurnaces=true;render();updateTemperatures()};
-$('#add').onclick=()=>{if(dirty)saveDraft();nextCycle=null;logCycleOpen('');formError='';selected='new';dirty=!!read(draftKey());render();$('#f-ticket')?.focus()};$('#main').onclick=e=>{const furnace=e.target.closest('[data-furnace]');if(furnace){openFurnaceHistory(furnace.dataset.furnace);return}if(e.target.closest('.regime')){saveDraft();window.open((demo?'./heat.html':'/heat')+'?steel='+encodeURIComponent($('#f-steel').value),'_blank','noopener');return}const steel=e.target.closest('[data-steel]');if(steel){selectSteel(steel.dataset.steel);return}const row=e.target.closest('[data-record]');if(row){if(pending||busy)return;if(dirty)saveDraft();showFurnaces=false;nextCycle=null;formError='';selected=row.dataset.record;comparison=read(key+'.conflict.'+selected);dirty=!!read(draftKey());render();return}const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;render()}const n=e.target.closest('[data-now]');if(n){const name=n.dataset.now;formTimes[name]=now();$('#f-'+name).value=local(formTimes[name]);saveDraft();if($('#review'))$('#review').disabled=true}};
+$('#add').onclick=()=>{if(dirty)saveDraft();nextCycle=null;logCycleOpen('');formError='';selected='new';dirty=!!read(draftKey());render();$('#f-ticket')?.focus()};$('#main').onclick=e=>{
+  const toggle=e.target.closest('[data-order-toggle],[data-charge-toggle]');
+  if(toggle){
+    const set=toggle.dataset.orderToggle?openOrders:openCharges,id=toggle.dataset.orderToggle||toggle.dataset.chargeToggle;
+    if(set.has(id))set.delete(id);else set.add(id);
+    render();return;
+  }
+  const decision=e.target.closest('[data-order-decision]');
+  if(decision){
+    if(allowed()&&confirm(decision.textContent+'?'))append({id:uuid(),record:decision.dataset.orderDecision,orderDecision:decision.dataset.decision});
+    return;
+  }
+  const charge=e.target.closest('[data-new-charge]');
+  if(charge){
+    if(!allowed())return;
+    const first=record(charge.dataset.newCharge),d=first.data,g=journalOrders().find(o=>o.events.includes(first)||o.events.some(x=>x.record===first.record));
+    nextCycle={...empty(),cycleOf:'',...(d.ticket?{ticket:d.ticket}:{}),order:d.order,product:d.product,name:d.name,diameter:d.diameter,length:d.length,
+      orderTotal:null,hardnessScale:d.hardnessScale||'HB'};
+    selected='charge:'+g.key;dirty=!!read(draftKey());formError='';render();return;
+  }
+  const furnace=e.target.closest('[data-furnace]');if(furnace){openFurnaceHistory(furnace.dataset.furnace);return}if(e.target.closest('.regime')){saveDraft();window.open((demo?'./heat.html':'/heat')+'?steel='+encodeURIComponent($('#f-steel').value),'_blank','noopener');return}const steel=e.target.closest('[data-steel]');if(steel){selectSteel(steel.dataset.steel);return}const row=e.target.closest('[data-record]');if(row){if(pending||busy)return;if(dirty)saveDraft();showFurnaces=false;nextCycle=null;formError='';selected=row.dataset.record;comparison=read(key+'.conflict.'+selected);dirty=!!read(draftKey());render();return}const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;render()}const n=e.target.closest('[data-now]');if(n){const name=n.dataset.now;formTimes[name]=now();$('#f-'+name).value=local(formTimes[name]);saveDraft();if($('#review'))$('#review').disabled=true}};
 const links=document.createElement('div');links.className='utility';links.innerHTML=(['admin','senior','thermist'].includes(me.role)?'<a href="'+(demo?'./heat.html':'/heat')+'">'+(['admin','senior'].includes(me.role)?'Корректировка базы терморежимов':'База терморежимов')+'</a>':'')+'<a href="'+(demo?'./eye.html':'/eye')+'">Суперглаз</a>'+(['admin','dispatcher','senior','thermist'].includes(me.role)?'<a href="'+(demo?'./dispatch.html':'/dispatch')+'">Заказы-наряды</a>':'')+((demo||me.role==='admin')?'<a href="'+(demo?'./admin.html':'/admin')+'">Администрирование</a>':'');document.querySelector('.bottom').prepend(links);
 const productionPaths={technologist:'technology',worker:'worker',saw:'saw',hr:'hr',qc:'qc',master:'master',qc_chief:'quality',production_chief:'production'};if(productionPaths[me.role])links.insertAdjacentHTML('afterbegin','<a href="'+(demo?'./'+productionPaths[me.role]+'.html':'/'+productionPaths[me.role])+'">Моё рабочее место</a>');
 $('#export').onclick=()=>download('kist-journal.json',{...current,user:{login:me.login,role:me.role}});$('#logout').onclick=async()=>{if(pending||dirty){toast('Сначала сохрани введённую запись');return}if(demo){if(confirm('Сбросить только это учебное демо?')){localStorage.removeItem(key+'.demo');location.reload()}return}try{const r=await fetch('/api/logout',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':me.csrf},body:'{}'});if(!r.ok)throw Error('Не удалось выйти');location.reload()}catch(e){status(e.message)}};
